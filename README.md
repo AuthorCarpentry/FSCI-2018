@@ -17,7 +17,7 @@ Author Carpentry at FSCI 2018: Reproducible Research Reporting and Dynamic Docum
 
 1. [Day 1: Introduction](01-getting-started.html)
 2. [Day 2: Basic Markdown](02-markdown-display.html)
-3. [Day 3: Document Appearance](03-appearance.html)
+3. [Day 3: Document Appearance](03-modifying-appearance.html)
 4. [Day 4: Dynamic Documents](04-dynamic.html)
 5. [Day 5: Publishing](04-publishing.html)
 
