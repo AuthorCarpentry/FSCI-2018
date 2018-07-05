@@ -1,29 +1,29 @@
-Author Carpentry : Sustainable Authorship with Markdown and Pandoc
+Author Carpentry at FSCI 2018: Reproducible Research Reporting and Dynamic Documents with Open Authoring Tools: Toward the Paper of the Future
 =======
 
-*Content Contributors: Sebastian Karcher, Tom Morrell, Gail Clement, Patrick Koppula*
-
-*Lesson Maintainers: Sebastian Karcher*
+*Instructors: Gail Clement, Tom Morrell*
 
 **Lesson status: In Development**
 
 ## What you will learn:
--
--
--
-
+- Identify the features of a reproducible and dynamic research communication (Paper of the Future) that is fit to enter the scholarly record.
+- Recognize at least three models of “Future Papers” now in publication.
+- Describe the benefits of composing research reports with open authoring tools.
+- Apply a text-based workflow for creating a paper that combines dynamic text, code and software.
+- Demonstrate an open-source workflow for automatically converting openly authored documents for publication, online posting and professional presentation.
+- Demonstrate use of the RStudio GUI platform for authoring and producing professional-quality research reports.
 
 ## Topics:
 
-1. [Introduction](00-getting-started.html)
-2. [Basic Markdown](01-markdown-display.html)
-3. [Advanced Markdown](02-markdown-behavior.html)
-4. [Citations](03-citation.html)
-5. [Multiple Outputs](04-multiple-outputs.html)
+1. [Day 1: Introduction](01-getting-started.html)
+2. [Day 2: Basic Markdown](02-markdown-display.html)
+3. [Day 3: Document Appearance](03-appearance.html)
+4. [Day 4: Dynamic Documents](04-dynamic.html)
+5. [Day 5: Publishing](04-publishing.html)
 
 ## Data
 
-Data files for the lesson are available here: 
+Please download the data files [here](https://github.com/AuthorCarpentry/FSCI-2018/tree/master/data)
 
 ## Requirements
 
@@ -31,14 +31,7 @@ Author Carpentry's teaching is hands-on, so participants are encouraged to use
 their own computers to insure the proper setup of tools for an efficient
 workflow.
 *These lessons assume no prior knowledge of the skills or tools*, but working
-through this lesson requires working copies of the software described below.
-To most effectively use these materials, please make sure to install everything
-*before* working through this lesson. 
-
-- Install Pandoc.  
-
-## Cheat Sheet
-
-## References
+through this lesson requires working copies of R and Rstudio.
+We'll work through software installation during the first day. 
 
                    
