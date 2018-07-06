@@ -137,6 +137,20 @@ Investigators will examine the websites of each journal listed in the `doaj_seal
 ```{r outputs-main, child = "outputs-child.Rmd"}
 ```
 
+This work will also generate graphs like those below.  These will be shared via Zenodo and licensed with a CC_BY license.
+
+```{r plot_license, echo= FALSE, fig.width=10,fig.height=11}
+
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$JnlLicense)) + stat_count() + labs(x="License", y="Count")
+```
+
+```{r plot_country, echo= FALSE, fig.width=10,fig.height=11}
+
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$PubCountry)) + stat_count() + labs(x="Country", y="Count") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
 ### Metadata
 
 The journal metadata contained in the project's data sets comes directly from the _Directory of Open Access Journals_. 
