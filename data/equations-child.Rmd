@@ -1,0 +1,30 @@
+---
+title: "equations-child.Rmd"
+output: html_document
+references:
+- id: Xie_2018
+  title: R Markdown - The Definitive Guide
+  author:
+  - family: Xie
+    given: Yihui
+  - family: Allaire
+    given: J. J.
+  - family: Grolemund
+    given: Garrett  
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  ISBN: 9781138359338
+  publisher: Chapman & Hall/CRC
+  type: book
+  issued:
+    year: 2018
+    month: 6
+---
+
+
+According to @Xie_2018 :
+
+Inline LaTeX equations can be written in a pair of dollar signs using the LaTeX syntax, e.g., $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$
+
+Math expressions of the display style can be written in a pair of double dollar signs, e.g., $$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+
+## References
