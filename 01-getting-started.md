@@ -17,7 +17,29 @@
 
 Instructors and learners
 
-## Exercise about modalities
+Paper hasn't changed much in 400 years.
+
+Review requirements of the scholarly record.
+
+    1. Notification
+    2. Dissemination
+    3. Certification
+    4. Preservation
+
+## Exercise about publishing
+
+What are the issues with the current publication system?  Join small groups
+and come up with as many things as you can (77 characters or less).  We'll get 
+back together in 10 minutes and listoff items.  If a group comes up with the 
+same thing as you, cross it out.  The group with the last unique item wins!
+
+## What can authors do?
+
+How can the actual publication.
+
+Now we'll show you the final result (on our machine).  
+
+The first step in getting this dynmaic document is installing some software!
 
 ## Software Installation
 
@@ -52,7 +74,7 @@ IDE](https://www.rstudio.com/products/rstudio/download/#download).
 You also need to download some files for this workshop:
 
 1. Make a new folder in your Desktop called `FSCI-2018-openauthoring`.
-2. Download [MAKE A ZIP FILE.zip]({{ page.root }}/files/MAKE A ZIP FILE.zip) and move the file to this folder.
+2. Download [The ZIP FILE OF FUN COMPONENTS]({{ page.root }}/data/) and mode the file to this folder.
 3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
 
 Install dependencies
@@ -64,5 +86,11 @@ rorcid
 httpur
 
 ## Intro to RStudio and knitting documents
+
+RStudio has four panels.  
+
+Open 'M_V1.Rmd' in Rstudio.  Hit the Knit button. 
+
+You can output this single file in multiple formats.
 
 Next: [Basic Markdown](02-markdown.html)
