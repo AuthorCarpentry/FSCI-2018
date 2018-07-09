@@ -89,8 +89,15 @@ httpur
 
 RStudio has four panels.  
 
-Open 'M_V1.Rmd' in Rstudio.  Hit the Knit button. 
+Open 'Base_2013_day1.Rmd' in Rstudio.  Change the name in the document to your name.  
 
-You can output this single file in multiple formats.
+Then hit the Knit button to generate a formatted version of the document. 
+
+You can output this single file in multiple formats.  By default we've been
+generating .html files, but we can also output to a word document.
+
+To output to slides, change the output format in the header to
+slidy_presentation.  You can then open this up in your web browser and tab
+through the presentation.
 
 Next: [Basic Markdown](02-markdown.html)
