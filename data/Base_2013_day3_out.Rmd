@@ -23,17 +23,14 @@ library(rmarkdown)
 library(DT)
 ```
 
-```{r global_options, include=FALSE}
-# Set global options for chunk options
-knitr::opts_chunk$set(echo=TRUE, warning=FALSE,message=FALSE, cache=FALSE)
-```
-
 ```{r add_dataset}
 # Add the dataset of DOAJ Seal journals
 
 doaj_seal <- read_csv('DOAJ_Seal.csv')
 
 ```
+
+
 
 # Administrative Data
 
