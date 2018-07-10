@@ -1,27 +1,11 @@
 ---
 title: "Data Management Plan"
-author: 
-- "Principal Investigator - Firstname Lastname, Institution"
-- "Co-Investigator - Firstname Lastname, Institution"
+author: "Principal Investigator - Firstname Lastname, Institution"
 date: "August 1, 2018"
 output:
-  html_document:
-    css: custom.css
-    fig_height: 2
-    fig_width: 2
-    theme: readable
-    highlight: kate
-    number_sections: yes
-    toc: yes
-    toc_depth: 2
-    toc_float: yes
-bibliography:
-- oajournals.bib
-- packages.bib
+  html_document: default
+  word_document: default
 ---
-  
-
-*****
 
 ```{r setup, include=FALSE, echo = FALSE}
 
@@ -51,7 +35,7 @@ doaj_seal <- read_csv('DOAJ_Seal.csv')
 
 ## Funder
 
-This research is being submitted for funding to the J. Bohannon Foundation http://www.johnbohannon.org/.
+This research is being submitted for funding to the [J. Bohannon Foundation] (http://www.johnbohannon.org/).
 
 ## Grant Reference Number
 
@@ -59,20 +43,20 @@ This research is being submitted for funding to the J. Bohannon Foundation http:
 
 ## Project Name
 
-_**Do Reputable Open Access Journals Require Open Data Sharing?**_
+***Do Reputable Open Access Journals Require Open Data Sharing?***
 
 ## Project Description
 
 This study analyzes the submission requirements of the most reputable open access journals to determine the prevalence and characteristics of data sharing policies. This question is an important one for 21^st^ century authors and readers because open data sharing is seen as a key component of open and more trusted scientific record.
 
-According to the Research Data Alliance (RDA) [Data Policy Standardisation and Implementation group] (https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation):
+According to the Research Data Alliance (RDA) [Data Policy Standardisation and Implementation group](https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation):
 
-> "the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
+>"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
 
 This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. 
-Our investigation builds on the recent work of Castro et al [-@Castro_2017] who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, Vasilevsky et al, [-@Vasilevsky_2017) -- may be skewed because of the authors' rules of inclusion and exclusion ^[in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals].
+Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, Vasilevsky et al, 2017) -- may be skewed because of the authors' rules of inclusion and exclusion (in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals).
 
-In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al [-@Castro_2017]  to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
+In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, reglardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al, 2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
 
 ![DOAJ Seal of Approval](images/doaj_seal_logo.png)
 
@@ -84,17 +68,15 @@ Moreover, the DOAJ Seal journals do include over 200 non-English language journa
 
 ## Researcher
 
-Gail Clement, Principal Investigator, Trieste Polytechnic Institute
+Firstname Lastname, Principal Investigator, Institution
 
 ## Researcher ID
 
-ORCID: 0000-0001-5494-4806
+ORCID: your ORCID 
 
 ## Date of First Version 
 
 ## Date of Last Update
-
-August 2, 2018
 
 ## Related Policies
 
@@ -116,10 +98,10 @@ The filtered version of the data set will be exported as a new file named `doaj_
 
 
 A sample of the `doaj_seal.csv` data set is shown below.  
+
 ```{r}
 knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the DOAJ Seal data.')
 ```
-
 
 
 ## Data being collected
@@ -128,17 +110,19 @@ The `doaj_seal.csv` data set will be copied and enhanced with additional columns
 
 - 'Data Policy'  (Boolean)
     + Yes | No
-- 'Data Sharing Policy' (Factor)
-    + No mention 
-    + Implied
-    + Mentioned
-    + Explicitly encouraged
-    + Required, but not explictly tied to editorial decisions
-    + Required as a condition of publication
-- 'Data Citation Policy' (Factor)
-    + No mention 
-    + Implied
-    + Explicitly encouraged
+    
+- 'Data Sharing Policy' (Factor, 6 levels)
+No mention 
+Implied
+Mentioned
+Explicitly encouraged
+Required, but not explictly tied to editorial decisions
+Required as a condition of publication
+
+'Data Citation Policy' (Facto, 3 levels)
+No mention 
+Implied
+Explicitly encouraged
         
     
 Investigators will examine the websites of each journal listed in the `doaj_seal_enhanced.csv` file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by Castro et al (2017) will be applied.
@@ -175,14 +159,14 @@ All files associated with the project will be maintained under the `Git` version
 
 # Storage and Backup
 
-During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at Trieste Polytechnic Institution. This facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
+During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at ? Institution. This facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
 
 # Deposit and long-term preservation
 
 After the project conclusion, all research outputs will be assigned Digital Object Identifiers by DataCite to serve as persistent identifiers and to always resolve to the landing page for the project files (metadata, data, code, and reports). 
 
 
-Additionally, the Research Data Storage Facility (RDSF) at Trieste Polytechnic Institution will undertake to preserve each of the digital outputs mentioned above, for three years beyond the end of the project. Refreshment of storage media will be scheduled as required
+Additionally, the Research Data Storage Facility (RDSF) at ? Institution will undertake to preserve each of the digital outputs mentioned above, for three years beyond the end of the project. Refreshment of storage media will be scheduled as required
 
 ****
 
@@ -199,9 +183,9 @@ The data and metadata will be made openly accessible under a CC-BY SA license in
 *****
 # Responsibilities and Resources
 
-The Principal Investigator is responsible for implementing the Data management Plan and ensuring it is reviewed and revised as necessary. She will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
+The Principal Investigator is responsible for implementing the Data management Plan and ensuring it is reviewed and revised as necessary. (S)he will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
 
-The Data Management Specialist assigned to the project as an in-kind contribution from the Trieste Polytechni Institute Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (S)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
+The Data Management Specialist assigned to the project as an in-kind contribution from the ? Institution Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (S)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 
 
 

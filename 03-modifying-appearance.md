@@ -5,112 +5,107 @@
 ---------------------------------------------------
 
 In an open publishing workflow formatting
-elements can also cause behavior changes in how your documents are rendered.
+elements can also cause changes in how your documents look.
 
 ## Learning Objectives
 
-* Understand how markup can drive computer behavior
-* 
-* 
-
-Demonstrate how the system date can be used to auto-date a document.  Showcase
-footnotes, code folding, or TOC.
+* Show how to modify document sections
+* Modify specific document formatting
+* Learn how code can be integrated in a document
 
 ----------------------------------------------------
-## Creating a Markdown Document
+## Document Sections
 
-So far, you have just written markdown in an online editor. Start by creating a local file. The file extension for markdown is .md. You can just open a text editor and create a file or do this from the commandline. use `cd` to go to the folder you want to work in. Then use `atom myresume.md` to create a markdown file.
+We have lots of sections in our document; it would be nice if these were
+listed in a table of contents and numbered so we could easily refer to a 
+specific section.  We don't want to have to manually update the table of
+contents or renumber everything when we move sections around; we want knitter
+to do everything for us.
 
-## Working with Markdown in Atom
-*You can skip this section if you are using a different text editor*.
+In order to customize the appearance of our document, we need to pass
+information to knitter about what we want.  We use the YAML header, where we
+customized the title and author, in order to set specific options.  
 
-Type some text into markdown. Now put some text into italics and bold using \* as you learned in the last lesson. What do you notice? One of the benefits of using Atom is that it gives you this *syntax highlighting* to make it easier for you to spot any problems in your text formatting.
+### Table of Contents
 
-Now press `ctrl+shift+m` (or select "Toggle Preview" under "Markdown Preview Plus" in the "Packages" menu). You will see your text formatted, just like you did in the online editor during the last lesson.
+In the YAML we have a number of output formats.  You'll notice when you change
+the knitter output format that the format you're interested in moves to the top
+of the list.  We can make customizations to the format by removing the word
+`default` after the format and including an indented list of options.  If we
+want to include a table of contents, we add the option `toc: yes` to both the
+`word_document` and `html_document` formats.  Then use the knit button to see
+the results.
 
+Thee are options that impact the appearance of the TOC.  For example, you can
+a layer of sections (like 'Metadata' under Data being collected) by using the
+option 'toc_depth: 2'
 
-## Markdown syntax
-You have already learned the two commands for bold and italics. Let's look at some other basics:
+### Section Numbers and Formatting
 
-- To create headings, put one or more \# symbols at the beginning of a line, followed by a space. One \# is for a level one header, \#\# for a level two header, etc.
-- To make bullet lists (such as this one), just start lines with a -; you can get additional levels by starting a line a couple of spaces or a tab in. Numbered lists work the same way using 1. 2. 3.
-  
-   ```
-    - Topic 1
-    - Topic 2  
-    - Topic 3
-      - Topic 3a
-  ```
-- To cite code (including markdown syntax as above) use \` on both sides for short bits and  \`\`\` in a separate line above and below larger codeblocks.
-- Quote text using > at the beginning of the line (maybe you remember this from old e-mail programs?)
+Section numbers is where the behavior of different formats starts to diverge.
+To add section numbers to our HTML document we just need to add the option
+`number_sections: yes`.  We can also have the TOC appear as a document sidebar
+by adding `toc_float: yes` to our options.
 
-  ```
-  > This is a Quote
-  ```
+For the word document, section numbering is controlled by the document theme
+(below).
 
-- A link is set putting the text that you want to highlight in square brackets followed by the link in round brackets. Don't forget to include http:// or https:// at the beginning of the link
+## Document Themes and Custom Formatting
 
-  ```
-  [This is a link](http://www.example.com)
-  ```
-- You can find more markdown formatting options [here](https://guides.github.com/features/mastering-markdown/). Note that markdown comes in different dialects, referred to as "flavors". We are mainly going to be using elements that are part of a consensus referred to as [Common Markdown](http://commonmark.org/), though you can use any other components of the github flavored markdown linked above.
+### HTML
 
+Knitr includes some built-in themes that format the overall document. [Cilck
+here to view available themes](https://bootswatch.com/3/).  You can control
+which theme is used for the document by adding `theme: readable`.  Try
+switching our a different theme and see what happens! 
 
-## Excercise
-Now let's try this. Create your Resume using markdown following the template below. Fill in the data relevant to you.
+These themes are build using standard web CSS.  If we don't like how any of the
+built in themes look, we can use CSS to make specific changes.  In our document
+the quotes look to big - they are larger than the surrounding text!  Make a
+text file by going to `File/New File/Text File` in RStudio.  This will open up
+an editor window where you can paste the following css code chunk:
 
-----
-
-# Resume of John Doe
-* ORCID: https://orcid.org/0000-0001-8249-7388  
-* [ScienceOpen Profile](https://www.scienceopen.com/user/fe25273d-b2ef-4843-b3a5-23ea6ae9f5e8)
-
-## Objective
-> To boldly go where no author has gone before
-
-
-## Experience
-* **Job 1**
-  * *Dates*
-  * Description/Accomplishment
-* **Job 2**
-  * *Dates*
-  * Description/Accomplishment  
-* **Job 3**
-  * *Dates*
-  * Description/Accomplishment
-
-## Publications
-
-(paste the output from DOI content negotiation here and mark it up with italics as appropriate)
-
-Karcher, S., & Steinberg, D. A. (2013). Assessing the Causes of Capital Account Liberalization: How Measurement Matters. *International Studies Quarterly, 57(1)*, 128–137. https://doi.org/10.1111/isqu.12001
-
-
-Karcher, S., & Schneider, B. R. (2012). Business politics in Latin America: Investigating structure, preferences, and influence. In P. R. Kingstone & D. J. Yashar (Eds.), *Routledge Handbook of Latin American Politics* (pp. 273–284). New York, NY: Routledge.
-
-Schneider, B. R., & Karcher, S. (2010). Complementarities and Continuities in the Political Economy of Labor Markets in Latin America. *Socio-Economic Review, 8(4)*, 623–651. https://doi.org/10.1093/ser/mwq022
-
-## Code samples
-Here is how to use `curl` to get a bibliographic reference for a DOI in APA style:
 ```
-curl -LH "Accept: text/x-bibliography; style=apa" https://doi.org/10.1126/science.169.3946.635
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    border-left: 5px solid #eee;
+}
 ```
 
----
-**Solution**: If you run into trouble, you can check the syntax for the above [here](GITHUBLINK).
+This will edit the spacing and fint size of all the quotes in the document. You
+can use simmilar standard CSS to modify the appearance of all other elements in
+your document; Remember markdown is really just an easy way of indicating HTML
+tags and CSS lets you modify those tags.
 
----
+When you have a completed css file, click the save icon and save the file
+as `custom.css`.  Note that you can call the file anything you want, but it's
+good to include the css extension.  You can then load this file in your
+document by adding the option `css: custom.css` to your YAML header.
 
-## Markdown and html
-Now let's look at how the markdown you wrote corresponds to html. Right-click on the preview window, select "Save as HTML" and save the file myresume.md.html somewhere on your computer. Now open a browser (Firefox or Chrome) and open that file. Right-click somewhere in the web document that open and select "Inspect Element".
+### Word
 
-> ## Challenge
-> Can you match markdown and html elements? How are they different? What do you think are the advantages of each format?
-> 
-> > ## Solution
-> > Markdown and html translate neatly: e.g. the headings are the same as h1, h2, h3, italics are the same as &lt;i&gt; tags, etc.
-> > But note how hard the html is to right, with the need to get all the tags right, and how hard to read it is for you.
-> > On the other hand, note all the additional information the HTML is able to include that isn't printed. That can be very useful, e.g. to include even more structure in a page or to add metadata.
+Gail to Add
 
-Previous: [Getting Started with Markdown](00-getting-started.html) Next: [Github Pages](02-gh-pages.html)
+## Integrated Code
+
+The benefit of using Rstudio to do document creation is that you have the
+ability to do computation, live within the journal.  First, let's load some
+data into our notebook.  Look at the top of the notebook with in a
+code chunk.  Code chunks are demarcated by three tics \`\`\`.  The first group
+of tics is followed by a label that indicates the type of code and a
+description.  So, for R code this label cound be `{r add_dataset}`.  You'll see
+RStudio generates 
+
+```{r plot_country, echo= FALSE, fig.width=10,fig.height=11}
+
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) + stat_count() + labs(x="Country", y="Count") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+```
+
+## Embedded Sub-Documents and Math
+
+
+
+Previous: [Getting Started with Markdown](02-markdown.html) Next: [Dynamic Documents](04-dynamic.html)
