@@ -3,6 +3,10 @@ title: "Data Management Plan"
 author: "Principal Investigator - Firstname Lastname, Institution"
 date: "August 1, 2018"
 output:
+  word_document:
+    toc: yes
+    toc_depth: 2
+    reference_docx: "Base_2013_day3_style.docx"
   html_document:
     number_sections: yes
     theme: readable
@@ -10,9 +14,6 @@ output:
     toc: yes
     toc_depth: 2
     toc_float: yes
-  word_document:
-    toc: yes
-    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
