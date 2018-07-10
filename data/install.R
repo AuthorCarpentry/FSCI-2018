@@ -1,5 +1,0 @@
-install.packages("tidyverse")
-install.packages("rmarkdown")
-install.packages("httpur")
-install.packages("DT")
-install.packages('rorcid')
