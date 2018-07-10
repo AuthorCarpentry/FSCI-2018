@@ -1,14 +1,11 @@
 ---
 title: "Data Management Plan"
 author:
-- Principal Investigator - Gail Clement, `r params$institution`
-- Co-Investigator - Thomas Morell, Caltech
-- Key Personnel - Donna Wrublewski and Robert Doiel, Caltech
-date: '`r format(Sys.Date(), ''%B %d, %Y'')`'
+ - Principal Investigator - Gail Clement, `r params$institution`
+ - Co-Investigator - Thomas Morell, Caltech
+ - Key Personnel - Donna Wrublewski and Robert Doiel, Caltech
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
   html_document:
     code_folding: hide
     css: custom.css
@@ -20,6 +17,9 @@ output:
     toc: yes
     toc_depth: 2
     toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
 params:
   institution:
     choices:
