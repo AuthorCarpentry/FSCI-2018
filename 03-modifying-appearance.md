@@ -1,17 +1,19 @@
-#  Markdown Syntax
+#  Modifying Document Appearance
 
-20 minutes
+3 Hours
 
 ---------------------------------------------------
 
-In an open publishing workflow formatting
-elements can also cause changes in how your documents look.
+Knitr gives you lots of options for changing how your document looks.
 
 ## Learning Objectives
 
 * Show how to modify document sections
 * Modify specific document formatting
 * Learn how code can be integrated in a document
+* Add references to a document
+* Manage sub-documents
+* Include equations in your document
 
 ----------------------------------------------------
 ## Document Sections
@@ -36,8 +38,8 @@ want to include a table of contents, we add the option `toc: yes` to both the
 `word_document` and `html_document` formats.  Then use the knit button to see
 the results.
 
-Thee are options that impact the appearance of the TOC.  For example, you can
-a layer of sections (like 'Metadata' under Data being collected) by using the
+There are options that impact the appearance of the TOC.  For example, you can
+remove a layer of TOC sections (like 'Metadata' under Data being collected) by using the
 option 'toc_depth: 2'
 
 ### Section Numbers and Formatting
@@ -61,7 +63,7 @@ switching our a different theme and see what happens!
 
 These themes are build using standard web CSS.  If we don't like how any of the
 built in themes look, we can use CSS to make specific changes.  In our document
-the quotes look to big - they are larger than the surrounding text!  Make a
+the quotes look to big; they are larger than the surrounding text!  Make a
 text file by going to `File/New File/Text File` in RStudio.  This will open up
 an editor window where you can paste the following css code chunk:
 
