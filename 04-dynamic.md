@@ -1,15 +1,18 @@
-#  Markdown Syntax
+#  Dynamic Content
 
-20 minutes
+3 hours
 
 ---------------------------------------------------
 
+In an open publishing workflow formatting
+elements can also cause changes in how your documents look.
+
 ## Learning Objectives
 
-* Understand how to add citations to a document
-* Look at modifications of a citation style
-* Generate a reference list
-* Dynamically pull content from a web resource
+* Add an HTML widget
+* Explore some Shiny reports
+* Parameterize a report
+* Integrate dynamic content from a web resource
 
 ----------------------------------------------------
 ## Creating a Markdown Document

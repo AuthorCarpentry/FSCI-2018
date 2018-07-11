@@ -1,48 +1,84 @@
-#  Markdown Syntax
+#  Introduction to Reproducible Reporting using RMarkdown 
 
-20 minutes
+90 minutes 
+
+**Still in draft as of Wed 4:20 pm!**
 
 ---------------------------------------------------
 
 ## Learning Objectives
 
-* Create a local markdown document and take advantage of Atom as a md editor
-* Learn the syntax for all important formatting in markdown
-* Learn how markdown relates to html
+* Identify characteristics of reproducible reports based on a published example provided in class
+* Review the evolution of the computational narrative (aka literate programming) as a precursor to reproducible reporting
+* Create a simple Rmarkdown document with code chunks in RStudio (as a first building block of a reproducible report) 
+* Explain the technology stack used to create a reproducible report in RStudio
 
-Scholarly publishing requires us to do formatting to clarify
-meaning: headings for sections, italics or bold for emphasis, quotes, tables,
-code blocks, and citations. Specific tags are needed to identify these
-segments.
 
-Teach headings, italics, bold, quotes, tables, code blocks, images
 
 ----------------------------------------------------
-## Creating a Markdown Document
 
-So far, you have just written markdown in an online editor. Start by creating a local file. The file extension for markdown is .md. You can just open a text editor and create a file or do this from the commandline. use `cd` to go to the folder you want to work in. Then use `atom myresume.md` to create a markdown file.
+## Anatomy of an RMarkdown Reproducible Report
 
-## Working with Markdown in Atom
-*You can skip this section if you are using a different text editor*.
+It's time to start building your own Reproducible Report! The course instructors have prepared all the content as text and script files, so you can focus on learning Rmarkdown. Let's go step by step:
 
-Type some text into markdown. Now put some text into italics and bold using \* as you learned in the last lesson. What do you notice? One of the benefits of using Atom is that it gives you this *syntax highlighting* to make it easier for you to spot any problems in your text formatting.
+Step 1. In RStudio, navigate through the Files directory to the `FSCI-2018/data` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and continue to work on the 'out' file during this Lesson.
 
-Now press `ctrl+shift+m` (or select "Toggle Preview" under "Markdown Preview Plus" in the "Packages" menu). You will see your text formatted, just like you did in the online editor during the last lesson.
+Step 2. Note that this file has three main components, as follows:
+
+a. `YAML Header` set off with three dashes `---` above and below and a blank line following the three dashes at the bottom
+
+b. The main body of the text
+
+c. Code chunks that contain R code that is executed when the document is knit to HTML or another output format (*Please ignore the code chunks for now -- we will master them in the next Lesson!*)
 
 
-## Markdown syntax
-You have already learned the two commands for bold and italics. Let's look at some other basics:
+Step 3. With the *Rmarkdown Cheatsheet* and *Reference Guide* at your fingertips, edit the exercise file per the following instructions 
 
-- To create headings, put one or more \# symbols at the beginning of a line, followed by a space. One \# is for a level one header, \#\# for a level two header, etc.
-- To make bullet lists (such as this one), just start lines with a -; you can get additional levels by starting a line a couple of spaces or a tab in. Numbered lists work the same way using 1. 2. 3.
-  
-   ```
-    - Topic 1
-    - Topic 2  
-    - Topic 3
-      - Topic 3a
-  ```
-- To cite code (including markdown syntax as above) use \` on both sides for short bits and  \`\`\` in a separate line above and below larger codeblocks.
+
+**YAML Header**
+
+In the `author` field, enter your own Name and Institution surrounded by quotes  
+In the `date` field, enter today's date
+
+
+**Text Document**
+
+
+Scholarly publishing requires us to format our text documents to clarify
+meaning. For example,
+
+* Headings and subheadings represent document structure, such as Sections
+* White space represents paragraphs or other text blocks with different content
+* Block quotes represent text that came from a third-party source
+* Font styles such as italic and bold represent emphasis
+* Font styles representing non-proportional text, such as examples of computer code
+* Lists and Tables represent concisely summarized information or data
+* Hyperlinks represent refernces to related information elsewhere within the document, or outside of the document
+* Inline images illustrate points made in the text
+* Footnotes represent commentary on the main text
+
+
+**Let's add RMarkdown syntax to our report to better communicate it's meaning.** 
+
+
+1. Create headings and subheadings by inserting one or more \# symbols at the beginning of a line, followed by a space. One \# is for a level one header, \#\# for a level two header and so on. 
+
+For this Exercise, assign Level 1, 2, and 3 headers so the exercise file reflects the sections of a Data Management Plan per the Digital Curation Centre's checklist (see the printed model in your packet)
+
+2. Add emphasis to the text, where appropriate, using single or double asterisks. Examples of text passages in want of emphasis are:  the phrase "Not Applicable"; the title of the Project; titles of publications.
+
+3. To set-off code or technical terminology, use the backtick symbol. A single \` on both sides works for short bits, and  three backticks \`\`\` in a separate line above and below is best for larger codeblocks. You can decide what text represents code in the exercise file.
+
+4. Bulleted lists
+
+To make unnumbered bullet lists , just start lines with a single asterisk \* or \ _ underscore and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
+
+To make a nested list, indent four spaces below the first level bullet and add another bullet using \+ 
+
+For this Exercise, find the list bullets in need of formatting and add the relevant Rmarkdown syntax. Bullets appear in  'Related Policies'; 'Data Being Collected'; and 'Ethics'.
+
+
+
 - Quote text using > at the beginning of the line (maybe you remember this from old e-mail programs?)
 
   ```
@@ -57,40 +93,6 @@ You have already learned the two commands for bold and italics. Let's look at so
 - You can find more markdown formatting options [here](https://guides.github.com/features/mastering-markdown/). Note that markdown comes in different dialects, referred to as "flavors". We are mainly going to be using elements that are part of a consensus referred to as [Common Markdown](http://commonmark.org/), though you can use any other components of the github flavored markdown linked above.
 
 
-## Excercise
-Now let's try this. Create your Resume using markdown following the template below. Fill in the data relevant to you.
-
-----
-
-# Resume of John Doe
-* ORCID: https://orcid.org/0000-0001-8249-7388  
-* [ScienceOpen Profile](https://www.scienceopen.com/user/fe25273d-b2ef-4843-b3a5-23ea6ae9f5e8)
-
-## Objective
-> To boldly go where no author has gone before
-
-
-## Experience
-* **Job 1**
-  * *Dates*
-  * Description/Accomplishment
-* **Job 2**
-  * *Dates*
-  * Description/Accomplishment  
-* **Job 3**
-  * *Dates*
-  * Description/Accomplishment
-
-## Publications
-
-(paste the output from DOI content negotiation here and mark it up with italics as appropriate)
-
-Karcher, S., & Steinberg, D. A. (2013). Assessing the Causes of Capital Account Liberalization: How Measurement Matters. *International Studies Quarterly, 57(1)*, 128–137. https://doi.org/10.1111/isqu.12001
-
-
-Karcher, S., & Schneider, B. R. (2012). Business politics in Latin America: Investigating structure, preferences, and influence. In P. R. Kingstone & D. J. Yashar (Eds.), *Routledge Handbook of Latin American Politics* (pp. 273–284). New York, NY: Routledge.
-
-Schneider, B. R., & Karcher, S. (2010). Complementarities and Continuities in the Political Economy of Labor Markets in Latin America. *Socio-Economic Review, 8(4)*, 623–651. https://doi.org/10.1093/ser/mwq022
 
 ## Code samples
 Here is how to use `curl` to get a bibliographic reference for a DOI in APA style:
