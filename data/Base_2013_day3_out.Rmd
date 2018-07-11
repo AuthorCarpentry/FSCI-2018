@@ -3,17 +3,18 @@ title: "Data Management Plan"
 author: "Principal Investigator - Firstname Lastname, Institution"
 date: "August 1, 2018"
 output:
-  word_document:
-    toc: yes
-    toc_depth: 2
-    reference_docx: "Base_2013_day3_style.docx"
   html_document:
+    css: custom.css
     number_sections: yes
     theme: readable
-    css: custom2.css
     toc: yes
     toc_depth: 2
     toc_float: yes
+  word_document:
+    reference_docx: Base_2013_day3_style.docx
+    toc: yes
+    toc_depth: 2
+bibliography: oajournals.bib
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
@@ -22,6 +23,11 @@ output:
 library(tidyverse)
 library(rmarkdown)
 library(DT)
+```
+
+```{r global_options, include=FALSE}
+# Set global options for chunk options
+knitr::opts_chunk$set(echo=TRUE, warning=FALSE,message=FALSE, cache=FALSE)
 ```
 
 ```{r add_dataset}
@@ -41,7 +47,7 @@ doaj_seal <- read_csv('DOAJ_Seal.csv')
 
 ## Funder
 
-This research is being submitted for funding to the [J. Bohannon Foundation] (http://www.johnbohannon.org/).
+This research is being submitted for funding to the [J. Bohannon Foundation](http://www.johnbohannon.org/).
 
 ## Grant Reference Number
 
@@ -60,9 +66,9 @@ According to the Research Data Alliance (RDA) [Data Policy Standardisation and I
 >"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
 
 This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. 
-Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, Vasilevsky et al, 2017) -- may be skewed because of the authors' rules of inclusion and exclusion (in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals).
+Our investigation builds on the recent work of @Castro_2017 who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, @Vasilevsky_2017) -- may be skewed because of the authors' rules of inclusion and exclusion (in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals).
 
-In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, reglardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al, 2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
+In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, reglardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by @Castro_2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
 
 ![DOAJ Seal of Approval](images/doaj_seal_logo.png)
 
@@ -71,6 +77,16 @@ In this study, we will include only the most reputable open access journals in o
 >"achieve a high level of openness, adhere to Best Practice and high publishing standards.The Seal is awarded to a journal that fulfills a set of criteria related to accessibility, openness, discoverability, reuse and author rights. It acts as a signal to readers and authors that the journal has generous use and reuse terms, author rights and adheres to the highest level of 'openness'. " ^[DOAJ selection for Seal Approval is explained in the FAQ at <https://doaj.org/faq#seal>]
 
 Moreover, the DOAJ Seal journals do include over 200 non-English language journals that merit analysis in this study. Excluding these from the analysis represents cultural bias that undermines reliable research. 
+
+```{r plot_country,echo= FALSE,fig.width=10,fig.height=11}
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) + stat_count() + labs(x="Country", y="Count") + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
+
+```
+
+```{r equations, child = "equations-child.Rmd"}
+
+```
 
 ## Researcher
 
@@ -133,6 +149,10 @@ Explicitly encouraged
     
 Investigators will examine the websites of each journal listed in the `doaj_seal_enhanced.csv` file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by Castro et al (2017) will be applied.
 
+```{r plot_license, echo= FALSE, fig.width=10,fig.height=11}
+doaj <- read.csv(file = "DOAJ_Seal.csv", header = TRUE)
+ggplot(data=doaj, aes(doaj$JnlLicense, fill=doaj$JnlLicense)) + stat_count() + labs(x="License", y="Count", title = "DOAJ Seal by Country") 
+```
 
 ### Metadata
 
@@ -199,10 +219,4 @@ The Data Management Specialist assigned to the project as an in-kind contributio
 
 About me...
 
-# References
-
-Castro et al, 2017. blah blah blah
-
-Vasilevsky et al, 2017. blah blah blah
-
-Wickham 201?. blah blah blah
+#References

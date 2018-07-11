@@ -29,152 +29,181 @@
 <hr />
 
 <p>In an open publishing workflow formatting
-elements can also cause behavior changes in how your documents are rendered.</p>
+elements can also cause changes in how your documents look.</p>
 
 <h2>Learning Objectives</h2>
 
 <ul>
-<li>Understand how markup can drive computer behavior</li>
-<li></li>
-<li></li>
+<li>Show how to modify document sections</li>
+<li>Modify specific document formatting</li>
+<li>Learn how code can be integrated in a document</li>
 </ul>
-
-<p>Demonstrate how the system date can be used to auto-date a document.  Showcase
-footnotes, code folding, or TOC.</p>
 
 <hr />
 
-<h2>Creating a Markdown Document</h2>
+<h2>Document Sections</h2>
 
-<p>So far, you have just written markdown in an online editor. Start by creating a local file. The file extension for markdown is .md. You can just open a text editor and create a file or do this from the commandline. use <code>cd</code> to go to the folder you want to work in. Then use <code>atom myresume.md</code> to create a markdown file.</p>
+<p>We have lots of sections in our document; it would be nice if these were
+listed in a table of contents and numbered so we could easily refer to a
+specific section.  We don&rsquo;t want to have to manually update the table of
+contents or renumber everything when we move sections around; we want knitter
+to do everything for us.</p>
 
-<h2>Working with Markdown in Atom</h2>
+<p>In order to customize the appearance of our document, we need to pass
+information to knitter about what we want.  We use the YAML header, where we
+customized the title and author, in order to set specific options.</p>
 
-<p><em>You can skip this section if you are using a different text editor</em>.</p>
+<h3>Table of Contents</h3>
 
-<p>Type some text into markdown. Now put some text into italics and bold using * as you learned in the last lesson. What do you notice? One of the benefits of using Atom is that it gives you this <em>syntax highlighting</em> to make it easier for you to spot any problems in your text formatting.</p>
+<p>In the YAML we have a number of output formats.  You&rsquo;ll notice when you change
+the knitter output format that the format you&rsquo;re interested in moves to the top
+of the list.  We can make customizations to the format by removing the word
+<code>default</code> after the format and including an indented list of options.  If we
+want to include a table of contents, we add the option <code>toc: yes</code> to both the
+<code>word_document</code> and <code>html_document</code> formats.  Then use the knit button to see
+the results.</p>
 
-<p>Now press <code>ctrl+shift+m</code> (or select &ldquo;Toggle Preview&rdquo; under &ldquo;Markdown Preview Plus&rdquo; in the &ldquo;Packages&rdquo; menu). You will see your text formatted, just like you did in the online editor during the last lesson.</p>
+<p>Thee are options that impact the appearance of the TOC.  For example, you can
+a layer of sections (like &lsquo;Metadata&rsquo; under Data being collected) by using the
+option &lsquo;toc_depth: 2&rsquo;</p>
 
-<h2>Markdown syntax</h2>
+<h3>Section Numbers and Formatting</h3>
 
-<p>You have already learned the two commands for bold and italics. Let&rsquo;s look at some other basics:</p>
+<p>Section numbers is where the behavior of different formats starts to diverge.
+To add section numbers to our HTML document we just need to add the option
+<code>number_sections: yes</code>.  We can also have the TOC appear as a document sidebar
+by adding <code>toc_float: yes</code> to our options.</p>
 
-<ul>
-<li>To create headings, put one or more # symbols at the beginning of a line, followed by a space. One # is for a level one header, ## for a level two header, etc.</li>
-<li>To make bullet lists (such as this one), just start lines with a -; you can get additional levels by starting a line a couple of spaces or a tab in. Numbered lists work the same way using 1. 2. 3.
-<br /></li>
-</ul>
+<p>For the word document, section numbering is controlled by the document theme
+(below).</p>
 
-<pre><code>    - Topic 1
-    - Topic 2  
-    - Topic 3
-      - Topic 3a
+<h2>Document Themes and Custom Formatting</h2>
+
+<h3>HTML</h3>
+
+<p>Knitr includes some built-in themes that format the overall document. <a href="https://bootswatch.com/3/">Cilck
+here to view available themes</a>.  You can control
+which theme is used for the document by adding <code>theme: readable</code>.  Try
+switching our a different theme and see what happens!</p>
+
+<p>These themes are build using standard web CSS.  If we don&rsquo;t like how any of the
+built in themes look, we can use CSS to make specific changes.  In our document
+the quotes look to big - they are larger than the surrounding text!  Make a
+text file by going to <code>File/New File/Text File</code> in RStudio.  This will open up
+an editor window where you can paste the following css code chunk:</p>
+
+<pre><code>blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    border-left: 5px solid #eee;
+}
 </code></pre>
 
-<ul>
-<li>To cite code (including markdown syntax as above) use ` on both sides for short bits and  ``` in a separate line above and below larger codeblocks.</li>
-<li>Quote text using &gt; at the beginning of the line (maybe you remember this from old e-mail programs?)</li>
-</ul>
+<p>This will edit the spacing and fint size of all the quotes in the document. You
+can use simmilar standard CSS to modify the appearance of all other elements in
+your document; Remember markdown is really just an easy way of indicating HTML
+tags and CSS lets you modify those tags.</p>
 
-<pre><code>  &gt; This is a Quote
+<p>When you have a completed css file, click the save icon and save the file
+as <code>custom.css</code>.  Note that you can call the file anything you want, but it&rsquo;s
+good to include the css extension.  You can then load this file in your
+document by adding the option <code>css: custom.css</code> to your YAML header.</p>
+
+<h3>Word</h3>
+
+<p>You can customize word document styling, such as fonts, sizing, and section
+numbering, within word.  You then provide knitr with the stylized document that
+knitr will build the new document from.  Because editing word document styling
+is a pain, we&rsquo;ve created a document with section numbering that you can use.
+You just need to add <code>reference_docx: &quot;Base_2013_day3_style.docx&quot;</code> to the YAML
+header for the <code>word_document</code> type and knit to see the result.</p>
+
+<h2>Integrated Code</h2>
+
+<p>The benefit of using Rstudio to do document creation is that you have the
+ability to do computation, live within the journal.  First, let&rsquo;s load some
+data into our notebook.  Look at the top of the notebook where the DOAJ data is
+imported in a code chunk.  Code chunks are demarcated by three tics ```.  The first group
+of tics is followed by a label that indicates the type of code and a
+description.  So, the label in this example is <code>{r add_dataset}</code>.  You&rsquo;ll see
+RStudio makes pretty formatting around the code chunk.  There are options for
+each chunk, and you can run the code by clicking the green arrow.  Then you
+press the arrow, you&rsquo;ll notice an output message and a change in the right
+&lsquo;Environment&rsquo; section of RStudio.  The message is the output from the
+operation, and the right panel shows that the data file has been loaded.  You
+can hide the output message by clickin on the up arror or modifying the options
+so that <code>message=FALSE</code>.</p>
+
+<p>Let&rsquo;s add a new code chunk that will do something fun! At the bottom of the
+&lsquo;Project Description&rsquo; add a new code chunk with the label <code>{r plot_country,echo= FALSE,fig.width=10,fig.height=11}</code></p>
+
+<p>and contents:</p>
+
+<pre><code>doaj &lt;- read.csv(file = &quot;DOAJ_Seal.csv&quot;, header = TRUE)
+ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) + stat_count() + labs(x=&quot;Country&quot;, y=&quot;Count&quot;) + theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1))
 </code></pre>
 
-<ul>
-<li>A link is set putting the text that you want to highlight in square brackets followed by the link in round brackets. Don&rsquo;t forget to include http:// or https:// at the beginning of the link</li>
-</ul>
+<p>Hit the green button and you&rsquo;ll see a plot appear.  When you knit the document,
+this code will also execute and place a plot in the document.</p>
 
-<pre><code>  [This is a link](http://www.example.com)
+<p>We can do the same thing to generate additional plots.  Add this code with the
+label &lsquo;plot_license&rsquo; before the section on Metadata.</p>
+
+<pre><code>doaj &lt;- read.csv(file = &quot;DOAJ_Seal.csv&quot;, header = TRUE)
+ggplot(data=doaj, aes(doaj$JnlLicense, fill=doaj$JnlLicense)) + stat_count() + labs(x=&quot;License&quot;, y=&quot;Count&quot;, title = &quot;DOAJ Seal by Country&quot;) 
 </code></pre>
 
-<ul>
-<li>You can find more markdown formatting options <a href="https://guides.github.com/features/mastering-markdown/">here</a>. Note that markdown comes in different dialects, referred to as &ldquo;flavors&rdquo;. We are mainly going to be using elements that are part of a consensus referred to as <a href="http://commonmark.org/">Common Markdown</a>, though you can use any other components of the github flavored markdown linked above.</li>
-</ul>
+<h2>References</h2>
 
-<h2>Excercise</h2>
+<p>References are another area of document preparation where automation is really
+helpful.  References in knitr are handled with BibTex files (.bib), which is a
+reasonably standard format that can be produced by most reference managers and
+online services.  We&rsquo;ve provided a <code>oajournals.bib</code> file for you to work with
+during this workshop.  There is an entire section of the YAML header that handles
+references called <code>bibliography</code>. You then provide knitr with the name of the
+BibTex file like:</p>
 
-<p>Now let&rsquo;s try this. Create your Resume using markdown following the template below. Fill in the data relevant to you.</p>
-
-<hr />
-
-<h1>Resume of John Doe</h1>
-
-<ul>
-<li>ORCID: <a href="https://orcid.org/0000-0001-8249-7388">https://orcid.org/0000-0001-8249-7388</a><br /></li>
-<li><a href="https://www.scienceopen.com/user/fe25273d-b2ef-4843-b3a5-23ea6ae9f5e8">ScienceOpen Profile</a></li>
-</ul>
-
-<h2>Objective</h2>
-
-<blockquote>
-<p>To boldly go where no author has gone before</p>
-</blockquote>
-
-<h2>Experience</h2>
-
-<ul>
-<li><strong>Job 1</strong>
-
-<ul>
-<li><em>Dates</em></li>
-<li>Description/Accomplishment</li>
-</ul></li>
-<li><strong>Job 2</strong>
-
-<ul>
-<li><em>Dates</em></li>
-<li>Description/Accomplishment<br /></li>
-</ul></li>
-<li><strong>Job 3</strong>
-
-<ul>
-<li><em>Dates</em></li>
-<li>Description/Accomplishment</li>
-</ul></li>
-</ul>
-
-<h2>Publications</h2>
-
-<p>(paste the output from DOI content negotiation here and mark it up with italics as appropriate)</p>
-
-<p>Karcher, S., &amp; Steinberg, D. A. (2013). Assessing the Causes of Capital Account Liberalization: How Measurement Matters. <em>International Studies Quarterly, 57(1)</em>, 128–137. <a href="https://doi.org/10.1111/isqu.12001">https://doi.org/10.1111/isqu.12001</a></p>
-
-<p>Karcher, S., &amp; Schneider, B. R. (2012). Business politics in Latin America: Investigating structure, preferences, and influence. In P. R. Kingstone &amp; D. J. Yashar (Eds.), <em>Routledge Handbook of Latin American Politics</em> (pp. 273–284). New York, NY: Routledge.</p>
-
-<p>Schneider, B. R., &amp; Karcher, S. (2010). Complementarities and Continuities in the Political Economy of Labor Markets in Latin America. <em>Socio-Economic Review, 8(4)</em>, 623–651. <a href="https://doi.org/10.1093/ser/mwq022">https://doi.org/10.1093/ser/mwq022</a></p>
-
-<h2>Code samples</h2>
-
-<p>Here is how to use <code>curl</code> to get a bibliographic reference for a DOI in APA style:</p>
-
-<pre><code>curl -LH &quot;Accept: text/x-bibliography; style=apa&quot; https://doi.org/10.1126/science.169.3946.635
+<pre><code>bibliography:
+- oajournals.bib
 </code></pre>
 
-<hr />
+<p>Let&rsquo;s open our <code>oajournals.bib</code> file and see what it looks like.  You&rsquo;ll see
+citation information about each article in groups indicated by an <code>@article</code>
+tag, followed by a label (typically the last name of an author and the year of
+publication e.g. Yound_2015), followed by citation information.  If you look at
+the current document, citations have been written in text (e.g. Castro et al
+(2017)).  We&rsquo;ll want to replace them by machine readable tags that knitr will
+be able to combine into a bibliography.  We use the @ symbol to indicate a
+reference, so replace each reference with the appropriate tag like
+<code>@Castro_2017</code>.</p>
 
-<p><strong>Solution</strong>: If you run into trouble, you can check the syntax for the above <a href="GITHUBLINK">here</a>.</p>
+<p>The reference list is automatically added to the end of the document, so we can
+delete the dummy references that were there.  You&rsquo;ll notice that
+<code>Vasilevsky_2017</code> showed up in the text as <code>n.d.</code>, even though it&rsquo;s in the
+reference list.  If we look in the BibTex file, we see that no authors and date
+are defined for this reference.  Knitr tries its best, but won&rsquo;t work correctly
+if the data is not available.</p>
 
-<hr />
+<h2>Embedded Sub-Documents and Math</h2>
 
-<h2>Markdown and html</h2>
+<p>To date we&rsquo;ve been writing everything in one Rmarkdown document.  We can
+actually build our document from sub-documents that knitr will integrate into
+the output.  Find a document in your folder called <code>equations-child.Rmd</code>.  You
+can see that this file has a YAML header with a full citation, followed by some
+Rmarkdown text.  You&rsquo;ll also see some equations written in LateX.  That&rsquo;s
+right; you can write LateX and it will get correctly formatted for the final
+document.</p>
 
-<p>Now let&rsquo;s look at how the markdown you wrote corresponds to html. Right-click on the preview window, select &ldquo;Save as HTML&rdquo; and save the file myresume.md.html somewhere on your computer. Now open a browser (Firefox or Chrome) and open that file. Right-click somewhere in the web document that open and select &ldquo;Inspect Element&rdquo;.</p>
+<p>Let&rsquo;s add this to our document at the end of the &lsquo;Project Description&rsquo;.  You
+add child documents with a code chunk, and include the document location in the
+label like <code>{r equations, child = &quot;equations-child.Rmd&quot;}</code>.</p>
 
-<blockquote>
-<h2>Challenge</h2>
+<p>When you knit you get nicely formatted equation in both html and word.  You&rsquo;ll
+notice the formatting for the reference is a bit wonky-we&rsquo;ll talk about that
+tomorrow.</p>
 
-<p>Can you match markdown and html elements? How are they different? What do you think are the advantages of each format?</p>
-
-<blockquote>
-<h2>Solution</h2>
-
-<p>Markdown and html translate neatly: e.g. the headings are the same as h1, h2, h3, italics are the same as &lt;i&gt; tags, etc.
-But note how hard the html is to right, with the need to get all the tags right, and how hard to read it is for you.
-On the other hand, note all the additional information the HTML is able to include that isn&rsquo;t printed. That can be very useful, e.g. to include even more structure in a page or to add metadata.</p>
-</blockquote>
-</blockquote>
-
-<p>Previous: <a href="00-getting-started.html">Getting Started with Markdown</a> Next: <a href="02-gh-pages.html">Github Pages</a></p>
+<p>Previous: <a href="02-markdown.html">Getting Started with Markdown</a> Next: <a href="04-dynamic.html">Dynamic Documents</a></p>
 
 </section>
 
