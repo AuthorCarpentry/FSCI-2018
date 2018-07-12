@@ -97,10 +97,11 @@ This study relies on the _DOAJ Journal Metadata_ available as a csv file downloa
 
 This data will be read into the open source tool OpenRefine openrefine.org to filter it for those journals awarded the DOAJ Seal, and to remove unneeded columns containing the web addresses for journal policies around plagiarism, submission fees, and other urls not related to this study.
 
-The filtered version of the data set will be exported as a new file named doaj_seal.csv for importing into analytical software.
+The filtered version of the data set will be exported from OpenRefine as a new file named doaj_seal.csv for importing into analytical software.
 
 
 A sample of the doaj_seal.csv data set is shown below.  
+
 ```{r table-head}
 knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the DOAJ Seal data.')
 ```
@@ -111,7 +112,8 @@ Data being collected
 The doaj_seal.csv data set will be copied and enhanced with additional columns, resulting in the processed dataset, doaj_seal_enhanced.csv. The following columns will be added to doaj_seal.csv, in conformance with the Coding Framework of Castro et al (2017)
 
 'Data Policy'  (Boolean)
-Yes | No
+Yes
+No
 
 'Data Sharing Policy' (Factor, 6 levels)
 No mention 
@@ -129,6 +131,27 @@ Explicitly encouraged
         
     
 Investigators will examine the websites of each journal listed in the doaj_seal_enhanced.csv file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by Castro et al (2017) will be applied.
+
+
+Expected Outputs of the project
+
+
+|Output #|Digital Output|Type|Format,Duration,Size|Planned access|
+|:------:|:-------|:-----------|:----------|:-------------|
+|1|doaj_seal.csv|raw dataset downloaded from DOAJ site| CSV file, plain text format, 2.7 MB   | Not retained since duplicative  |
+|2| doaj_seal_enhanced.csv | enhanced dataset with new data | CSV file, plain text format, 2.7 MB   | GitHub repository; Zenodo repository  |
+|3| Dataset documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
+|4| Data Processing steps  | R scripts and comments | R Notebook file, 1 MB | GitHub public repository |
+|5| Data Visualizations  | R scripts and documentation; Plots | R Notebook file, .png image files 4 MB | GitHub public repository |
+
+
+`Add the following final row of data to the pipe table above:`  
+
+6
+Journal article
+Rendered output per publisher requirements
+RMarkdown, 9 MB
+Publisher website (open access) and community preprint server
 
 
 Metadata

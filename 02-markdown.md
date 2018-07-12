@@ -2,7 +2,7 @@
 
 90 minutes 
 
-**Still in draft as of Wed 4:20 pm!**
+**Still in draft as of `r Sys.time()`**
 
 ---------------------------------------------------
 

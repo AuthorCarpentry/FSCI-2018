@@ -291,12 +291,85 @@ doaj_seal &lt;- read_csv('DOAJ_Seal.csv')</code></pre>
 <ul>
 <li>‘Data Policy’ (Boolean)
 <ul>
-<li>Yes | No</li>
+<li>Yes</li>
+<li>No</li>
 </ul></li>
-<li>‘Data Sharing Policy’ (Factor, 6 levels) No mention Implied Mentioned Explicitly encouraged Required, but not explictly tied to editorial decisions Required as a condition of publication</li>
+<li>‘Data Sharing Policy’ (Factor, 6 levels)
+<ol style="list-style-type: decimal">
+<li>No mention 2 Implied</li>
+<li>Mentioned</li>
+<li>Explicitly encouraged</li>
+<li>Required, but not explictly tied to editorial decisions</li>
+<li>Required as a condition of publication</li>
+</ol></li>
 </ul>
-<p>‘Data Citation Policy’ (Facto, 3 levels) No mention Implied Explicitly encouraged</p>
+<p>‘Data Citation Policy’ (Facto, 3 levels) 1. No mention 2. Implied 3. Explicitly encouraged</p>
 <p>Investigators will examine the websites of each journal listed in the <code>doaj_seal_enhanced.csv</code> file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by Castro et al (2017) will be applied.</p>
+<div id="expected-outputs-of-the-project" class="section level3">
+<h3>Expected Outputs of the Project</h3>
+<table style="width:81%;">
+<colgroup>
+<col width="12%"></col>
+<col width="12%"></col>
+<col width="18%"></col>
+<col width="16%"></col>
+<col width="20%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Output #</th>
+<th align="left">Digital Output</th>
+<th align="left">Type</th>
+<th align="left">Format,Duration,Size</th>
+<th align="left">Planned access</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="left">doaj_seal.csv</td>
+<td align="left">raw dataset downloaded from DOAJ site</td>
+<td align="left">CSV file, plain text format, 2.7 MB</td>
+<td align="left">Not retained since duplicative</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="left">doaj_seal_enhanced.csv</td>
+<td align="left">enhanced dataset with new data</td>
+<td align="left">CSV file, plain text format, 2.7 MB</td>
+<td align="left">GitHub repository; Zenodo repository</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="left">Dataset documentation</td>
+<td align="left">json metadata file</td>
+<td align="left">plain text file, .1 MB</td>
+<td align="left">Datacite registry database; GitHub public repository; Zenodo repository</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="left">Data Processing steps</td>
+<td align="left">R scripts and comments</td>
+<td align="left">R Notebook file, 1 MB</td>
+<td align="left">GitHub public repository</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="left">Data Visualizations</td>
+<td align="left">R scripts and documentation; Plots</td>
+<td align="left">R Notebook file, .png image files 4 MB</td>
+<td align="left">GitHub public repository</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="left">Journal article</td>
+<td align="left">Rendered output per publisher requirements</td>
+<td align="left">RMarkdown, 9 MB</td>
+<td align="left">Publisher website (open access) and community preprint server</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div id="metadata" class="section level3">
 <h3>Metadata</h3>
 <p>The journal metadata contained in the project’s data sets comes directly from the <em>Directory of Open Access Journals</em>.</p>
