@@ -1,7 +1,10 @@
 ---
 title: "Data Management Plan"
-author: "Principal Investigator - Firstname Lastname, Institution"
-date: "August 1, 2018"
+author:
+- Principal Investigator - Firstname Lastname, `r params$institution`
+- Co-Investigator - Thomas Morell, Caltech
+- Key Personnel - Donna Wrublewski and Robert Doiel, Caltech
+date: "`r format(Sys.time(), '%d/%m/%Y')`"
 output:
   html_document:
     css: custom.css
@@ -15,6 +18,16 @@ output:
     reference_docx: Base_2013_day3_style.docx
     toc: yes
     toc_depth: 2
+params:
+  institution:
+    choices:
+    - International Centre for Theoretical Physics
+    - Trieste Polytechnic Institute
+    - CODATA-RDA Summer School
+    - Elsevier Inc
+    input: select
+    label: 'Institution:'
+    value: Trieste Polytechnic    
 bibliography:
 - oajournals.bib
 - packages.bib
@@ -139,7 +152,7 @@ This data will be read into the open source tool [`OpenRefine`](openrefine.org) 
 The filtered version of the data set will be exported as a new file named `doaj_seal.csv` for importing into analytical software.
 
 
-A sample of the `doaj_seal.csv` data set is shown below.  
+A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document. 
 
 ```{r}
 knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the DOAJ Seal data.')
@@ -230,7 +243,7 @@ The data and metadata will be made openly accessible under a CC-BY SA license in
 *****
 # Responsibilities and Resources
 
-The Principal Investigator is responsible for implementing the Data management Plan and ensuring it is reviewed and revised as necessary. (S)he will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
+The Principal Investigator is responsible for implementing the Data Management Plan and ensuring it is reviewed and revised as necessary. (S)he will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
 
 The Data Management Specialist assigned to the project as an in-kind contribution from the ? Institution Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (S)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 

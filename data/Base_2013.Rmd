@@ -36,6 +36,23 @@ params:
 bibliography:
 - oajournals.bib
 - packages.bib
+references:
+- id: Xie_2018
+  title: R Markdown - The Definitive Guide
+  author:
+  - family: Xie
+    given: Yihui
+  - family: Allaire
+    given: J. J.
+  - family: Grolemund
+    given: Garrett  
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  ISBN: 9781138359338
+  publisher: Chapman & Hall/CRC
+  type: book
+  issued:
+    year: 2018
+    month: 6
 ---
 
 *****
@@ -86,10 +103,11 @@ According to the Research Data Alliance (RDA) [Data Policy Standardisation and I
 
 >"the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of **data sharing policies**."
 
-This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. 
+This study investigates whether the **most reputable Open Access journals** have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles.
+
 Our investigation builds on the recent work of @Castro_2017 who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies [see for example, @Vasilevsky_2017] -- may be skewed because of the authors' rules of inclusion and exclusion ^[in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; the choice to exclude non_English language journals].
 
-In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, reglardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by @Castro_2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from @Castro_2017.
+In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the [_**Directory of Open Access Journals, DOAJ**_](http://doaj.org) (shown below). We will apply the same coding framework devised by @Castro_2017 to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardless of language, will yield a more accurate and reproducible set of findings than those published from @Castro_2017.
 
 ![DOAJ Seal of Approval](images/doaj_seal_logo.png)
 
@@ -156,7 +174,7 @@ knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the D
 
 ## Data being collected
 
-The `doaj_seal.csv` data set will be copied and enhanced with additional columns, reulsting in the processed dataset, `doaj_seal_enhanced.csv`. The following columns will be added to `doaj_seal.csv`, in conformance with the Coding Framework of Castro et al (2017)
+The `doaj_seal.csv` data set will be copied and enhanced with additional columns, resulting in the processed data set, `doaj_seal_enhanced.csv`. The following columns will be added to `doaj_seal.csv`, in conformance with the Coding Framework of @Castro_2017.
 
 - 'Data Policy'  (Boolean)
     + Yes | No
@@ -165,7 +183,7 @@ The `doaj_seal.csv` data set will be copied and enhanced with additional columns
     + Implied
     + Mentioned
     + Explicitly encouraged
-    + Required, but not explictly tied to editorial decisions
+    + Required, but not explicitly tied to editorial decisions
     + Required as a condition of publication
 - 'Data Citation Policy' (Factor)
     + No mention 
@@ -244,7 +262,7 @@ The data and metadata will be made openly accessible under a CC-BY SA license in
 *****
 # Responsibilities and Resources
 
-The Principal Investigator is responsible for implementing the Data management Plan and ensuring it is reviewed and revised as necessary. She will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
+The Principal Investigator is responsible for implementing the Data Management Plan and ensuring it is reviewed and revised as necessary. She will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
 
 The Data Management Specialist assigned to the project as an in-kind contribution from the `r params$institution` Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (s)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 

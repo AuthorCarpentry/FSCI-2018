@@ -58,7 +58,7 @@ This study investigates whether the most reputable Open Access journals have dat
 
 Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies (see for example, Vasilevsky et al, 2017) -- may be skewed because of the authors' rules of inclusion and exclusion -- in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; and the choice to exclude non_English language journals].
 
-In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the Directory of Open Access Journals, DOAJ (http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al (2017)  to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardles of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
+In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the Directory of Open Access Journals, DOAJ (http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al (2017)  to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardless of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
 
 DOAJ Seal of Approval images/doaj_seal_logo.png
 
@@ -109,7 +109,7 @@ knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the D
 
 Data being collected
 
-The doaj_seal.csv data set will be copied and enhanced with additional columns, resulting in the processed dataset, doaj_seal_enhanced.csv. The following columns will be added to doaj_seal.csv, in conformance with the Coding Framework of Castro et al (2017)
+The doaj_seal.csv data set will be copied and enhanced with additional columns, resulting in the processed data set, doaj_seal_enhanced.csv. The following columns will be added to doaj_seal.csv, in conformance with the Coding Framework of Castro et al (2017)
 
 'Data Policy'  (Boolean)
 Yes
@@ -120,7 +120,7 @@ No mention
 Implied
 Mentioned
 Explicitly encouraged
-Required, but not explictly tied to editorial decisions
+Required, but not explicitly tied to editorial decisions
 Required as a condition of publication
 
 
@@ -138,9 +138,9 @@ Expected Outputs of the project
 
 |Output #|Digital Output|Type|Format,Duration,Size|Planned access|
 |:------:|:-------|:-----------|:----------|:-------------|
-|1|doaj_seal.csv|raw dataset downloaded from DOAJ site| CSV file, plain text format, 2.7 MB   | Not retained since duplicative  |
-|2| doaj_seal_enhanced.csv | enhanced dataset with new data | CSV file, plain text format, 2.7 MB   | GitHub repository; Zenodo repository  |
-|3| Dataset documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
+|1|doaj_seal.csv|raw data set downloaded from DOAJ site| CSV file, plain text format, 2.7 MB   | Not retained since duplicative  |
+|2| doaj_seal_enhanced.csv | enhanced data set with new data | CSV file, plain text format, 2.7 MB   | GitHub repository; Zenodo repository  |
+|3| Data set documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
 |4| Data Processing steps  | R scripts and comments | R Notebook file, 1 MB | GitHub public repository |
 |5| Data Visualizations  | R scripts and documentation; Plots | R Notebook file, .png image files 4 MB | GitHub public repository |
 
