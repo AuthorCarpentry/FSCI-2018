@@ -54,17 +54,17 @@ According to the Research Data Alliance (RDA) Data Policy Standardisation and Im
 
 "the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
 
-This study investigates whether the most reputable Open Access journals have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. 
+This study investigates whether the most reputable Open Access journals have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. FN-
 
-Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies (see for example, Vasilevsky et al, 2017) -- may be skewed because of the authors' rules of inclusion and exclusion -- in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; and the choice to exclude non_English language journals].
+Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies (see for example, Vasilevsky et al, 2017) -- may be skewed because of the authors' rules of inclusion and exclusion FN - in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; and the choice to exclude non_English language journals.
 
 In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the Directory of Open Access Journals, DOAJ (http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al (2017)  to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardless of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
 
-DOAJ Seal of Approval images/doaj_seal_logo.png
+DOAJ Seal of Approval images doaj_seal_logo.png
 
 DOAJ Seal journals are considered the most reputable because they: 
 
-"achieve a high level of openness, adhere to Best Practice and high publishing standards.The Seal is awarded to a journal that fulfills a set of criteria related to accessibility, openness, discoverability, reuse and author rights. It acts as a signal to readers and authors that the journal has generous use and reuse terms, author rights and adheres to the highest level of 'openness'. " DOAJ selection for Seal Approval is explained in the FAQ at https://doaj.org/faq#seal
+"achieve a high level of openness, adhere to Best Practice and high publishing standards.The Seal is awarded to a journal that fulfills a set of criteria related to accessibility, openness, discoverability, reuse and author rights. It acts as a signal to readers and authors that the journal has generous use and reuse terms, author rights and adheres to the highest level of 'openness'. " FN- DOAJ selection for Seal Approval is explained in the FAQ at https://doaj.org/faq#seal
 
 Moreover, the DOAJ Seal journals do include over 200 non-English language journals that merit analysis in this study. Excluding these from the analysis represents cultural bias that undermines reliable research. 
 
@@ -166,7 +166,7 @@ Ethics and Legal Compliance
 
 No additional ethical or privacy issues arise in this study because both the DOAJ data, and the information about data policies for any published journal, are publicly posted online.
 
-The data provided about journals awarded the Directory of Open Access Journals Seal of Approval is distributed under a Creative Commons BY-SA license. This license requires that reusers of the data share their derivative data set under the same license. Therefore, the output of this research will be disseminated under the CC BY-SA license. This license adheres to the Principles and Guidelines of the Research Data Alliance Legal Interoperability Group, which recommends the use of Creative Commons Attribution licenses to allow the broadest sharing of data while guaranteeing attribution to the data provider. https://www.rd-alliance.org/rda-codata-legal-interoperability-research-data-principles-and-implementation-guidelines-now
+The data provided about journals awarded the Directory of Open Access Journals Seal of Approval is distributed under a Creative Commons BY-SA license. This license requires that reusers of the data share their derivative data set under the same license. Therefore, the output of this research will be disseminated under the CC BY-SA license. This license adheres to the Principles and Guidelines of the Research Data Alliance Legal Interoperability Group, which recommends the use of Creative Commons Attribution licenses to allow the broadest sharing of data while guaranteeing attribution to the data provider. FN- The Legal Interop Guidelines are posted at https://www.rd-alliance.org/rda-codata-legal-interoperability-research-data-principles-and-implementation-guidelines-now
 
 
 *****
@@ -204,7 +204,7 @@ The final complete data set doaj_seal_enhanced and all published outputs produce
 
 Data Sharing
 
-The data and metadata will be made openly accessible under a CC-BY SA license in the CERN-maintained open access repository Zenodo https://zenodo.org/, an open dependable home for the long-tail of science, enabling researchers to share and preserve any research outputs in any size, any format and from any science. FN: Zenodo policies are available online at http://about.zenodo.org/policies/
+The data and metadata will be made openly accessible under a CC-BY SA license in the CERN-maintained open access repository Zenodo https://zenodo.org/, an open dependable home for the long-tail of science, enabling researchers to share and preserve any research outputs in any size, any format and from any science. FN- Zenodo policies are available online at http://about.zenodo.org/policies/
 
 *****
 Responsibilities and Resources

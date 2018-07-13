@@ -1,4 +1,4 @@
-#  Introduction to Reproducible Reporting using RMarkdown 
+#  Introduction to RMarkdown for Reproducible Reporting
 
 90 minutes 
 
@@ -19,23 +19,26 @@
 
 It's time to start building your own Reproducible Report! The course instructors have prepared all the content as text and script files, so you can focus on learning Rmarkdown. Let's go step by step:
 
-Step 1. In RStudio, navigate through the Files directory to the `FSCI-2018/data` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and continue to work on the 'out' file during this Lesson.
+#### Step 1. 
 
-Step 2. Note that this file has three main components, as follows:
+In RStudio, navigate through the `Files` directory to the `FSCI-2018/data` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
 
-a. `YAML Header` set off with three dashes `---` above and below and a blank line following the three dashes at the bottom
+#### Step 2. Note that the `.Rmd` exercise file has three main components:
 
-b. The main body of the text
+*  `YAML Header` 
+YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
 
-c. Code chunks that contain R code that is executed when the document is knit to HTML or another output format (*Please ignore the code chunks for now -- we will master them in the next Lesson!*)
+*   The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
+
+*    Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
 
 
-Step 3. With the *Rmarkdown Cheatsheet* and *Reference Guide* at your fingertips, edit the exercise file per the following instructions 
+#### Step 3. Edit the exercise file per the following instructions 
 
 
 **YAML Header**
 
-In the `author` field, enter your own Name and Institution surrounded by quotes  
+In the `author` field, enter your own Name and Institution surrounded by quotes    
 In the `date` field, enter today's date
 
 
@@ -49,9 +52,9 @@ meaning. For example,
 * White space represents paragraphs or other text blocks with different content
 * Block quotes represent text that came from a third-party source
 * Font styles such as italic and bold represent emphasis
-* Font styles representing non-proportional text, such as examples of computer code
+* Font styles representing non-proportional text distinguish computer code or technical terms
 * Lists and Tables represent concisely summarized information or data
-* Hyperlinks represent refernces to related information elsewhere within the document, or outside of the document
+* Hyperlinks represent references to related information elsewhere within the document, or outside of the document
 * Inline images illustrate points made in the text
 * Footnotes represent commentary on the main text
 
@@ -61,57 +64,45 @@ meaning. For example,
 
 1. Create headings and subheadings by inserting one or more \# symbols at the beginning of a line, followed by a space. One \# is for a level one header, \#\# for a level two header and so on. 
 
-For this Exercise, assign Level 1, 2, and 3 headers so the exercise file reflects the sections of a Data Management Plan per the Digital Curation Centre's checklist (see the printed model in your packet)
+    For this Exercise, assign Level 1, 2, and 3 headers so the exercise file reflects the sections of a Data Management Plan per the Digital Curation Centre's checklist (see the printed model in your packet -- also, the Digital Curation Centre's DMP checklist is available for download at http://www.dcc.ac.uk/resources/data-management-plans/checklist)
 
-2. Add emphasis to the text, where appropriate, using single or double asterisks. Examples of text passages in want of emphasis are:  the phrase "Not Applicable"; the title of the Project; titles of publications.
+2. Add emphasis to the text, where appropriate, using single or double asterisks or single or double underscores. Examples of text passages in want of emphasis are:  the phrase "Not Applicable"; the title of the Project; titles of publications.
 
-3. To set-off code or technical terminology, use the backtick symbol. A single \` on both sides works for short bits, and  three backticks \`\`\` in a separate line above and below is best for larger codeblocks. You can decide what text represents code in the exercise file.
+3. Superscripts and subscripts can be added by surrounding the text with the symbols \^ and \~ , respectively. Find a phrase in the exercise file in want of a superscript and mark it up accordingly. Add an _arrow sticky note_ to your laptop lid.
 
-4. Bulleted lists
+4. Quote two text blocks in the exercise file using the \> symbol at the beginning of the line (maybe you remember this from old e-mail programs?)
 
-To make unnumbered bullet lists , just start lines with a single asterisk \* or \ _ underscore and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
+> This is a Quote
 
-To make a nested list, indent four spaces below the first level bullet and add another bullet using \+ 
+5. Bulleted lists: To make unnumbered bullet lists , just start each line with a single asterisk \* or \ - hyphen and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
 
-For this Exercise, find the list bullets in need of formatting and add the relevant Rmarkdown syntax. Bullets appear in  'Related Policies'; 'Data Being Collected'; and 'Ethics'.
+    To make a nested list, indent four spaces below the first level bullet and add another bullet using the \+ symbol
 
+    For this exercise, find the list bullets in need of formatting and add the relevant Rmarkdown syntax. Bullets appear in  'Related Policies'; 'Data Being Collected'; and 'Ethics'.
+    
 
+6. To display technical terminology or other non-proportional text, use the backtick symbol. A single \` on both sides works for short bits, and  three backticks \`\`\` in a separate line above and below is best for larger codeblocks.  
 
-- Quote text using > at the beginning of the line (maybe you remember this from old e-mail programs?)
+    Find the name of a computer program, computer file, or computer code in the exercise file and mark it up to represent inline code
+  
+    Find an example of a code block in the exercise file. When you find one, place a happy sticky note on your laptop lid, and knit the document to html, and go grab a snack!
 
-  ```
-  > This is a Quote
-  ```
+7. Create multiple links to content elsewhere by placing each link text in square brackets \[\] followed by the link address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
 
-- A link is set putting the text that you want to highlight in square brackets followed by the link in round brackets. Don't forget to include http:// or https:// at the beginning of the link
+8. Create one inline image by adding an exclamation mark \! in the text, then placing the image name  in square brackets \[\] followed by the image file address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
 
-  ```
-  [This is a link](http://www.example.com)
-  ```
-- You can find more markdown formatting options [here](https://guides.github.com/features/mastering-markdown/). Note that markdown comes in different dialects, referred to as "flavors". We are mainly going to be using elements that are part of a consensus referred to as [Common Markdown](http://commonmark.org/), though you can use any other components of the github flavored markdown linked above.
-
-
-
-## Code samples
-Here is how to use `curl` to get a bibliographic reference for a DOI in APA style:
 ```
-curl -LH "Accept: text/x-bibliography; style=apa" https://doi.org/10.1126/science.169.3946.635
+TIP: Make sure there is no space between the text in brackets and the address in parantheses!
 ```
 
----
-**Solution**: If you run into trouble, you can check the syntax for the above [here](GITHUBLINK).
+9. Add four footnotes to the text in the exercise (replace the placeholder'FN-') by inserting the caret symbol \^ outside of square brackets \[\], and inserting the footnote content inside those brackets.
 
----
+10. Pandoc supports crude tables created with the pipe \| and \- symbols to designate cell borders, and the \+ symbol to control text alignment in a cell. The exercise file provides the makings of a pipe table in the Expected Outputs section. the final row of data needs formatting -- once you complete the table, save the file and knit it to both HTML and Word. If successful, save the file again under the name 'Base_2013_day3_in.Rmd'. 
 
-## Markdown and html
-Now let's look at how the markdown you wrote corresponds to html. Right-click on the preview window, select "Save as HTML" and save the file myresume.md.html somewhere on your computer. Now open a browser (Firefox or Chrome) and open that file. Right-click somewhere in the web document that open and select "Inspect Element".
+```
+Congratulations on completing the first draft of your Reproducible Report!
 
-> ## Challenge
-> Can you match markdown and html elements? How are they different? What do you think are the advantages of each format?
-> 
-> > ## Solution
-> > Markdown and html translate neatly: e.g. the headings are the same as h1, h2, h3, italics are the same as &lt;i&gt; tags, etc.
-> > But note how hard the html is to right, with the need to get all the tags right, and how hard to read it is for you.
-> > On the other hand, note all the additional information the HTML is able to include that isn't printed. That can be very useful, e.g. to include even more structure in a page or to add metadata.
+```
+
 
 Previous: [Getting Started with Markdown](00-getting-started.html) Next: [Github Pages](02-gh-pages.html)
