@@ -35,7 +35,7 @@ doaj_seal <- read_csv('DOAJ_Seal.csv')
 
 ## Funder
 
-This research is being submitted for funding to the [J. Bohannon Foundation](http://www.johnbohannon.org/).
+This research is being submitted for funding to the [J. Bohannon Foundation] (http://www.johnbohannon.org/).
 
 ## Grant Reference Number
 
@@ -72,7 +72,7 @@ Firstname Lastname, Principal Investigator, Institution
 
 ## Researcher ID
 
-## ORCID: your ORCID 
+ORCID: your ORCID 
 
 ## Date of First Version 
 
@@ -109,36 +109,23 @@ knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the D
 The `doaj_seal.csv` data set will be copied and enhanced with additional columns, resulting in the processed dataset, `doaj_seal_enhanced.csv`. The following columns will be added to `doaj_seal.csv`, in conformance with the Coding Framework of Castro et al (2017)
 
 - 'Data Policy'  (Boolean)
-    + Yes
-    + No
+    + Yes | No
     
 - 'Data Sharing Policy' (Factor, 6 levels)
-    1. No mention 
-    2 Implied
-    3. Mentioned
-    4. Explicitly encouraged
-    5. Required, but not explictly tied to editorial decisions
-    6. Required as a condition of publication
+No mention 
+Implied
+Mentioned
+Explicitly encouraged
+Required, but not explictly tied to editorial decisions
+Required as a condition of publication
 
-- 'Data Citation Policy' (Facto, 3 levels)
-    1. No mention 
-    2. Implied
-    3. Explicitly encouraged
+'Data Citation Policy' (Facto, 3 levels)
+No mention 
+Implied
+Explicitly encouraged
         
     
 Investigators will examine the websites of each journal listed in the `doaj_seal_enhanced.csv` file to determine whether the data sharing policy is included in the Instructions to Authors. The Coding Framework published by Castro et al (2017) will be applied.
-
-### Expected Outputs of the Project
-
-|Output #|Digital Output|Type|Format,Duration,Size|Planned access|
-|:------:|:-------|:-----------|:----------|:-------------|
-|1|doaj_seal.csv|raw dataset downloaded from DOAJ site| CSV file, plain text format, 2.7 MB   | Not retained since duplicative  |
-|2| doaj_seal_enhanced.csv | enhanced dataset with new data | CSV file, plain text format, 2.7 MB   | GitHub repository; Zenodo repository  |
-|3| Dataset documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
-|4| Data Processing steps  | R scripts and comments | R Notebook file, 1 MB | GitHub public repository |
-|5| Data Visualizations  | R scripts and documentation; Plots | R Notebook file, .png image files 4 MB | GitHub public repository |
-|6| Journal article | Rendered output per publisher requirements | RMarkdown, 9 MB | Publisher website (open access) and community preprint server |
-
 
 
 ### Metadata

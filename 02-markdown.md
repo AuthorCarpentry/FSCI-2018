@@ -2,8 +2,6 @@
 
 90 minutes 
 
-**Still in draft as of `r Sys.time()`**
-
 ---------------------------------------------------
 
 ## Learning Objectives

@@ -120,7 +120,7 @@ The `doaj_seal.csv` data set will be copied and enhanced with additional columns
     5. Required, but not explictly tied to editorial decisions
     6. Required as a condition of publication
 
-- 'Data Citation Policy' (Facto, 3 levels)
+- 'Data Citation Policy' (Factor, 3 levels)
     1. No mention 
     2. Implied
     3. Explicitly encouraged
