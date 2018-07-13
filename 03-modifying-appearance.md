@@ -178,8 +178,6 @@ Let's add this to our document at the end of the 'Project Description'.  You
 add child documents with a code chunk, and include the document location in the
 label like `{r equations, child = "equations-child.Rmd"}`. 
 
-When you knit you get nicely formatted equation in both html and word.  You'll
-notice the formatting for the reference is a bit wonky-we'll talk about that
-tomorrow.
+When you knit you get nicely formatted equation in both html and word.
 
 Previous: [Getting Started with Markdown](02-markdown.html) Next: [Dynamic Documents](04-dynamic.html)
