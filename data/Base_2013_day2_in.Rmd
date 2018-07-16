@@ -124,7 +124,7 @@ Required, but not explicitly tied to editorial decisions
 Required as a condition of publication
 
 
-'Data Citation Policy' (Facto, 3 levels)
+'Data Citation Policy' (Factor, 3 levels)
 No mention 
 Implied
 Explicitly encouraged

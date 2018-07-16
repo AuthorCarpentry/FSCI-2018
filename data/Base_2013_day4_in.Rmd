@@ -10,7 +10,6 @@ output:
     toc: yes
     toc_depth: 2
     toc_float: yes
-    code_folding: hide
   word_document:
     reference_docx: Base_2013_day3_style.docx
     toc: yes

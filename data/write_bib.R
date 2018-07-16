@@ -1,4 +1,4 @@
 library(tidyverse)
 library(knitr)
-write_bib(c("tidyverse", "rmarkdown", "knitr"), file = "packages.bib"
+write_bib(c("tidyverse", "rmarkdown", "knitr", "rorcid"), file = "packages.bib"
 )
