@@ -1,12 +1,11 @@
 ---
 title: "Data Management Plan"
-author: "Principal Investigator - Firstname Lastname, Institution"
+author:
+- Principal Investigator - Your Name, `r params$institution`
+- Co-Investigator - Thomas Morell, Caltech
+- Key Personnel - Donna Wrublewski and Robert Doiel, Caltech
 date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
 output:
-  word_document:
-    reference_docx: Base_2013_day3_style.docx
-    toc: yes
-    toc_depth: 2
   html_document:
     css: custom.css
     number_sections: yes
@@ -35,6 +34,17 @@ references:
   issued:
     year: 2018
     month: 6
+params:
+  institution:
+    choices:
+    - International Centre for Theoretical Physics
+    - Force11 Scholarly Comm Institute
+    - Trieste Polytechnic Institute
+    - CODATA-RDA Summer School
+    - Elsevier Inc
+    input: select
+    label: 'Institution:'
+    value: Force11 Scholarly Comm Institute
 ---
 
 ```{r setup, include=FALSE, echo = FALSE}
@@ -110,7 +120,7 @@ ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) + stat_count() + l
 
 ## Researcher
 
-Firstname Lastname, Principal Investigator, Institution
+Firstname Lastname, Principal Investigator, `r params$institution`
 
 ## Researcher ID
 
@@ -124,7 +134,7 @@ Firstname Lastname, Principal Investigator, Institution
 
 ## Related Policies
 
-a. All original data, code, or reports produced as part of this project are owned by Trieste Polytechnic Institute per its institutional intellectual property policy.
+a. All original data, code, or reports produced as part of this project are owned by Trieste Polytechnic `r params$institution` per its institutional intellectual property policy.
 
 b. The J. Bohannan Foundation adheres to the open access and data sharing policies of the [Gates Foundation](https://www.gatesfoundation.org/How-We-Work/General-Information/Open-Access-Policy)
 
@@ -141,7 +151,8 @@ This data will be read into the open source tool [`OpenRefine`](openrefine.org) 
 The filtered version of the data set will be exported as a new file named `doaj_seal.csv` for importing into analytical software.
 
 
-A sample of the `doaj_seal.csv` data set is shown below.  
+A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document. 
+
 
 ```{r}
 knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the DOAJ Seal data.')
@@ -209,14 +220,14 @@ All files associated with the project will be maintained under the `Git` version
 
 # Storage and Backup
 
-During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at ? Institution. This facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
+During the active phase of the project data will be stored on and backed up to the Research Data Storage Facility (RDSF) at `r params$institution`. This facility represents 2 million pounds of digital resilient storage, with ongoing capital investment. The RDSF is overseen by a steering group of senior research and support staff, which includes the PVC Research. Backup procedures are robust (overnight backup, copies held remotely on tape) and secured access is in place
 
 # Deposit and long-term preservation
 
 After the project conclusion, all research outputs will be assigned Digital Object Identifiers by DataCite to serve as persistent identifiers and to always resolve to the landing page for the project files (metadata, data, code, and reports). 
 
 
-Additionally, the Research Data Storage Facility (RDSF) at ? Institution will undertake to preserve each of the digital outputs mentioned above, for three years beyond the end of the project. Refreshment of storage media will be scheduled as required
+Additionally, the Research Data Storage Facility (RDSF) at `r params$institution` will undertake to preserve each of the digital outputs mentioned above, for three years beyond the end of the project. Refreshment of storage media will be scheduled as required
 
 ****
 
@@ -235,12 +246,45 @@ The data and metadata will be made openly accessible under a CC-BY SA license in
 
 The Principal Investigator is responsible for implementing the Data management Plan and ensuring it is reviewed and revised as necessary. (S)he will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
 
-The Data Management Specialist assigned to the project as an in-kind contribution from the ? Institution Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (S)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
+The Data Management Specialist assigned to the project as an in-kind contribution from the `r params$institution` Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (S)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 
 *****
+# Annexes
+
+## Complete dataset `doaj_seal.csv` {#annex-table}
+
+```{r data-table}
+doaj_seal %>%
+  datatable(rownames = FALSE, 
+            colnames = c("Title", "Publisher", "Country", "Fees", "Waivers", "Identifiers", "Start Year", "Language(s)", "Review  Process", "Plagiarism check", "Time to Press", "License", "Author owns Copyright", "DOAJ Seal"),
+            class = "cell-border stripe", 
+            caption = "Journals with DOAJ Seal",
+            filter = list(position = "bottom"),
+            extensions = 'Buttons', options = list(dom = 'Bfrtip',
+                                                   buttons = c('colvis', 'csv', 'pdf'))
+  )
+
+```
+
 
 ## Principal Investigator's BioSketch
 
 _This will be auto-populated from your ORCID profile using the @R-rorcid `rorcid` package._
+
+
+
+```{r orcid-bio, echo= FALSE}
+library ('rorcid')
+library('httpuv')
+
+token <- orcid_auth(scope = "/authenticate", reauth = FALSE, redirect_uri = getOption("rorcid.redirect_uri"))
+
+res <- orcid_bio(orcid = "0000-0001-5494-4806")
+bio <- res$'0000-0001-5494-4806'$'content'
+
+
+```
+
+`r bio`
 
 # References

@@ -24,12 +24,13 @@ params:
   institution:
     choices:
     - International Centre for Theoretical Physics
+    - Force11 Scholarly Comm Institute
     - Trieste Polytechnic Institute
     - CODATA-RDA Summer School
     - Elsevier Inc
     input: select
     label: 'Institution:'
-    value: Trieste Polytechnic
+    value: Force11 Scholarly Comm Institute
 bibliography:
 - oajournals.bib
 - packages.bib
@@ -259,7 +260,7 @@ The data and metadata will be made openly accessible under a CC-BY SA license in
 *****
 # Responsibilities and Resources
 
-The Principal Investigator is responsible for implementing the Data Management Plan and ensuring it is reviewed and revised as necessary. She will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
+The Principal Investigator is responsible for implementing the Data Management Plan and ensuring it is reviewed and revised as necessary. (S)he will be responsible for all data collection and recording; for data analysis and visualization; and for maintain all files under version control using `git` and `GitHub`.
 
 The Data Management Specialist assigned to the project as an in-kind contribution from the `r params$institution` Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (s)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 
