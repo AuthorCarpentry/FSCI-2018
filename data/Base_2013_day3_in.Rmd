@@ -106,7 +106,7 @@ knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the D
 
 ## Data being collected
 
-The `doaj_seal.csv` data set will be copied and enhanced with additional columns, resulting in the processed dataset, `doaj_seal_enhanced.csv`. The following columns will be added to `doaj_seal.csv`, in conformance with the Coding Framework of Castro et al (2017)
+The doaj_seal.csv data set currently includes over 1000 reputable open access journals that we will investigate in this study. The `doaj_seal.csv` data set will be copied and enhanced with additional columns, resulting in the processed dataset, `doaj_seal_enhanced.csv`. The following columns will be added to `doaj_seal.csv`, in conformance with the Coding Framework of Castro et al (2017)
 
 - 'Data Policy'  (Boolean)
     + Yes
