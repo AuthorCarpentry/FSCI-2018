@@ -11,4 +11,7 @@ bio <- res$'0000-0001-5494-4806'$'content'
 
 ```
 
-`r bio`
+# Code section to save token to environment
+if(!file.exists("~/.Renviron")) # only create if not already there
+  file.create("~/.Renviron")    # (don't overwrite it)
+file.edit("~/.Renviron")
