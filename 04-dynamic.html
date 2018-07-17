@@ -47,8 +47,14 @@ elements can also cause changes in how your documents look.</p>
 <h2>Pull from an ORCID profile</h2>
 
 <p>In order to dynamically pull from an ORCID profile, we have to get an
-authentication token from ORCID.  In the document go to the section called
-&lsquo;Principal Investigators Biosketch&rsquo;.  Click the green arrow to run the code
+authentication token from ORCID.  In the document find the section called
+&lsquo;Principal Investigators Biosketch&rsquo;.  We&rsquo;ll be doing a three step process to
+connect our document with our ORCID account.</p>
+
+<p>Open the file <code>insert_4b_orcid.R</code>. Copy the first code chunk to the &lsquo;Principal
+Investigators Biosketch&rsquo; section of your document.</p>
+
+<p>Click the green arrow to run the code
 chunk.  This will open up a web browser to the ORCID web site, where you&rsquo;ll log
 in as normal.  In your R environment you&rsquo;ll see a variable called &lsquo;token&rsquo;.
 This is what provides access to ORCID.</p>
@@ -68,7 +74,15 @@ file.edit(&quot;~/.Renviron&quot;)
 
 <p>where <code>1c7...</code> is replaced by the long string that we printed to the R console
 earlier.  You&rsquo;ll want to copy everything after <code>BEARER</code>. Save this file, which
-will be read every time you use R.</p>
+will be read every time you use R.  This file will show up in your home
+directory, which is different from your current directory.</p>
+
+<p>Now go back to the document.  Edit the text to say &lsquo;This is auto-populated..&rsquo;
+and then add the text &lsquo;<code>r bio</code>&rsquo; which will place your bio in the
+document.  Then knit and you&rsquo;ll see your biography from ORCID in the document.</p>
+
+<p>Now go to your ORCID account and make a change to your biography.  Now all you need to update the
+biosketch in your document is to click the knit button.</p>
 
 <p>Previous: <a href="00-getting-started.html">Getting Started with Markdown</a> Next: <a href="02-gh-pages.html">Github Pages</a></p>
 
