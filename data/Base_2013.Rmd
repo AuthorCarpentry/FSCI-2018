@@ -287,7 +287,7 @@ doaj_seal %>%
 
 ## Principal Investigator's BioSketch
 
-_This will be auto-populated from your ORCID profile using the @R-rorcid `rorcid` package._
+_This is auto-populated from your ORCID profile using the @R-rorcid `rorcid` package._
 
 ```{r orcid-bio, echo= FALSE}
 library ('rorcid')

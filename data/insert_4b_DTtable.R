@@ -1,6 +1,4 @@
-# Annexes
-
-## Complete dataset `doaj_seal.csv` {#annex-table}
+# Place this chunk below the heading Annexes
 
 ```{r data-table}
 doaj_seal %>%

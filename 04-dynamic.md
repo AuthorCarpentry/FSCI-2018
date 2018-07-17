@@ -4,50 +4,88 @@
 
 ---------------------------------------------------
 
-In an open authoring workflow, elements in the Rmarkdown file not only affect how your documents look but also how they render and behave when output to final version. That is because the coded text and scripts within the Rmarkdown file are **computationally actionable**. A computer is operating on the document to combine and render its content, providing you more power than you would have working manually as a human author.
+In a reproducible report, elements in the `Rmarkdown` file affect not only how your documents look, but also how they render and behave when output to a final format. That is because the coded text and scripts within the `Rmarkdown` file are **computationally actionable**. A computer is operating on the document to combine and render its content, providing you more power than you would have working manually as a human author.
 
-In this lesson we'll add a set of dynamic features to the exercise file and knit to evaluate the outputs in HTML and Word.   
+In this lesson we'll add a set of dynamic features to the exercise file and knit it to evaluate the outputs in HTML and Word.   
 
 
 ## Learning Objectives
 
-* Integrate dynamic content from an R script so the output is continually updated 
+* Integrate dynamic content from an `R` script so the output is continually updated 
 * Distinguish between dynamic elements that will (and won't) work in multiple output formats (HTML, Word)
-* Add an HTML widget to allow user interaction in an output document
+* Add an HTML widget to allow user interaction in an output HTML document
 * Parameterize a document to permit efficient and powerful customized HTML reports
 * Demonstrate the power of integrating content from the Web into your reproducible report
 
 ----------------------------------------------------
-## Content generated from R scripts
+
+## Content generated from `R` scripts
 
 Up to now, you have manually entered three dates referenced in this document. Let's replace them with dynamically generated dates that will auto-update by the computer!
 
-* Open the file `insert_4a_dates.R`
-* Copy the code into the 3 different sections of the document, as directed in the comments of this file
-* Close the file `insert_4a_dates.R`
+1. Open the file `insert_4a_dates.R`  
+2. Copy the code into the 3 different sections of the exercise file, as directed in the comments included in`insert_4a_dates.R`  
+3. Close the file `insert_4a_dates.R`
 
 
-Another section of the exercise file that can be more accurately and efficiently entered by the computer is the number of journals in the DOAJ Seal dataset. Let's replace manually crafted text with computer code!
+Another section of the exercise file that can be populated by the computer is the number of journals in the *DOAJ Seal* dataset. Let's replace manually composed text with computer code!
 
-* Open the file `insert_4a_jnls.txt`
-* Copy the code into the **Data being collected** section, making it the first sentence. 
-* Close the file `insert_4a_jnls.txt`
+1. Open the file `insert_4a_jnls.txt`
+2. Copy the code into the **Data being collected** section of the exercise file, making it the first sentence. 
+3. Close the file `insert_4a_jnls.txt`
 
 Save the changes to the exercise file and knit to HTML and Word. Can you find where the dynamic-generated inline text now appears?
 
-## Auto-generate bibliography files for content that is subject to continued change
+## Auto-generate bibliography files
 
-Have you wondered why the YAML in the exercise file contains two separate bibliography files (`.bib`)? Why not make one concatenated file?
+Have you wondered why the YAML in the exercise file contains two separate bibliography files (`oajournals.bib` and `packages.bib`)? Why not make one concatenated file?
 
-The reason for the two files is that some of the references cited in the report -- the R packages used to generate the report -- are continually updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). We can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the packages referenced with the certainty the references are always up-to-date!
+The reason for the two files is that some of the references cited in the report represent `R` packages used to generate the report. These are continually updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). If we manually maintained the bibliography file we'd be editing it continually to reflect the new version of any `R` package we use.
 
-In this exercise, let's add the citation for the `rorcid` package that we'll be using later on.  
+Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the packages referenced in the report. This more powerful and efficient form of literature programming provides certainty that the references are always up-to-date!
+
+In this exercise, let's add the citation for the `rorcid` package that we'll be using later on in this lesson.  
 
 1. Open `packages.bib` file to see that it currently does not include a citation for`rorcid`. Close that file.
-2. Open the script file `write_bib.R` and on the third line -- the one that starts with `write_bib(c("tidyverse"`... add the "`rorcid`" in quotes to the list.
+2. Open the script file `write_bib.R` and on the third line -- the one that starts with `write_bib(c("tidyverse"...)` add "`rorcid`" in quotes to the list.
 3. Save the changes to `write_bib.R`
-4. Select all of the code in  `write_bib.R` with your mouse and once it is all highlighted, press `command+enter` to execute the code. You can watch the code run in your console window.
-5. 
+4. Select all of the code in  `write_bib.R` with your mouse. Once it is all highlighted, press `command+enter` to execute the code. You can watch the code run in your console window.
+5. Open `packages.bib` file again to see that it now includes a citation for`rorcid`. Close that file.
+
+## Building in User Interaction (Part 1)
+
+`Rmarkdown` offers multiple ways to build in user interactivity into your reproducible report. Enhancing documents in this way allows readers of your report to interact with, inspect, and evaluate the data and code you've published. 
+
+Let's start by adding a `code folding` option in our HTML output. This small interactive feature allows readers to see or hide the code chunks embedded in your report.
+
+1. In the YAML header of the exercise file, add a new line below the `output:` and `html:` lines. 
+
+`code_folding: hide`
+
+This line should be at the same indent as other html options such as `css`, `toc`, `number_sections`, etc.
+
+2. Save the changes to the exercise file and knit to HTML and Word. 
+
+What difference do you see in how `code folding` renders in the HTML and Word outputs? You can ponder this question as you enjoy a morning break!
+
+---------------------------------------------------
+
+## Building in User Interaction (Part 2)
+
+The data underlying this report is a table showing _DOAJ Seal_ journals as rows, and the characteristics of those data as the columns. Let's make all of that data fully accessible and reuseable for the readers of this report. 
+
+To accomplish this enhancement, we need to copy a code chunk that formats the underlying dataset using the Datatable package. This code chunk relies on an [HTML Widgets](https://www.htmlwidgets.org/) package that enables JavaScript visualization libraries  in `Rmarkdown`. HTML widgets are a more advanced `R` object to build and are not covered in this course. However, we can insert a pre-built data table for our report to illustrate the power of interactive features in reproducible reporting!
+
+1. Open the R script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
+
+2. In the exercise file, scroll down to the **Annexes** heading and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report.
+
+3. Let's tidy up this section of the report by adding some additional text and a link from the static table located in an earlier section.
+
+* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a ## header). Keep the file open...
+* In the exercise file, paste the copied text under the heading **Annexes** and above the data-table code chunk.
+
+
 
 
 
