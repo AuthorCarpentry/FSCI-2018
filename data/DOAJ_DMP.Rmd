@@ -259,7 +259,4 @@ bio <- res$'0000-0001-5494-4806'$'content'
 `r bio`
 
 
-
-
-
 # References
