@@ -265,8 +265,6 @@ The Principal Investigator is responsible for implementing the Data Management P
 The Data Management Specialist assigned to the project as an in-kind contribution from the `r params$institution` Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (s)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 
 
-
-
 # Annexes
 
 ## Complete dataset `doaj_seal.csv` {#annex-table}

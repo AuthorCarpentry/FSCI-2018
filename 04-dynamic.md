@@ -28,29 +28,29 @@ Up to now, you have manually entered three dates referenced in this document. Le
 3. Close the file `insert_4a_dates.R`
 
 
-Another section of the exercise file that can be populated by the computer is the number of journals in the *DOAJ Seal* dataset. Let's replace manually composed text with computer code!
+Another section of the exercise file that can be populated by the computer is the number of journals in the *DOAJ Seal* dataset. Let's replace manually-composed text with computer code!
 
 1. Open the file `insert_4a_jnls.txt`
 2. Copy the code into the **Data being collected** section of the exercise file, making it the first sentence. 
 3. Close the file `insert_4a_jnls.txt`
 
-Save the changes to the exercise file and knit to HTML and Word. Can you find where the dynamic-generated inline text now appears?
+Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now? 
 
 ## Auto-generate bibliography files
 
 Have you wondered why the YAML in the exercise file contains two separate bibliography files (`oajournals.bib` and `packages.bib`)? Why not make one concatenated file?
 
-The reason for the two files is that some of the references cited in the report represent `R` packages used to generate the report. These are continually updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). If we manually maintained the bibliography file we'd be editing it continually to reflect the new version of any `R` package we use.
+The reason for the two files is that some of the references cited in our reproducible report represent `R` packages used to generate the report. `R` packages are continually updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). If we manually maintained the bibliography file we'd be editing it continually to reflect the new version of any `R` package we use.
 
-Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the packages referenced in the report. This more powerful and efficient form of literature programming provides certainty that the references are always up-to-date!
+Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the `R` packages referenced in the report. This more powerful and efficient form of literature programming provides certainty that the references are always up-to-date!
 
-In this exercise, let's add the citation for the `rorcid` package that we'll be using later on in this lesson.  
+In this exercise, let's add the citation for the `DT` and the  `rorcid` packages that we'll be using later on in this lesson.  
 
-1. Open `packages.bib` file to see that it currently does not include a citation for`rorcid`. Close that file.
-2. Open the script file `write_bib.R` and on the third line -- the one that starts with `write_bib(c("tidyverse"...)` add "`rorcid`" in quotes to the list.
+1. Open `packages.bib` file to see that it currently does not include a citation for `DT` or `rorcid`. Close that file.
+2. Open the script file `write_bib.R` and on the third line -- the one that starts with `write_bib(c("tidyverse"...)` add `DT` and `rorcid`, each in quotes, to the list of packages you want references for.
 3. Save the changes to `write_bib.R`
 4. Select all of the code in  `write_bib.R` with your mouse. Once it is all highlighted, press `command+enter` to execute the code. You can watch the code run in your console window.
-5. Open `packages.bib` file again to see that it now includes a citation for`rorcid`. Close that file.
+5. Open `packages.bib` file once again to see that it now includes a citation for the `DT` and `rorcid` packages we'll be using in a bit. Close that file and put a smiley sticky on your laptop to signify happiness. 
 
 ## Building in User Interaction (Part 1)
 
@@ -74,16 +74,49 @@ What difference do you see in how `code folding` renders in the HTML and Word ou
 
 The data underlying this report is a table showing _DOAJ Seal_ journals as rows, and the characteristics of those data as the columns. Let's make all of that data fully accessible and reuseable for the readers of this report. 
 
-To accomplish this enhancement, we need to copy a code chunk that formats the underlying dataset using the Datatable package. This code chunk relies on an [HTML Widgets](https://www.htmlwidgets.org/) package that enables JavaScript visualization libraries  in `Rmarkdown`. HTML widgets are a more advanced `R` object to build and are not covered in this course. However, we can insert a pre-built data table for our report to illustrate the power of interactive features in reproducible reporting!
+To accomplish this enhancement, we need to copy a code chunk that formats the underlying dataset using the `Datatable (DT)` package. [@R-DT].  This package is one of the [HTML Widgets](https://www.htmlwidgets.org/) that enable JavaScript libraries to create dynamic content in `Rmarkdown` documents. `DT` tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illusthate the power of interactive features !
 
-1. Open the R script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
+1. Open the `R` script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
 
-2. In the exercise file, scroll down to the **Annexes** heading and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report.
+2. In the exercise file, scroll down to the **Annexes** heading and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report. 
 
-3. Let's tidy up this section of the report by adding some additional text and a link from the static table located in an earlier section.
+3. Now let's tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (higher up in the exercise file).
 
-* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a ## header). Keep the file open...
+* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a ## header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
+
 * In the exercise file, paste the copied text under the heading **Annexes** and above the data-table code chunk.
+
+* Back in the file `insert_4b_table.txt`, copy the second paragraph of text starting with "The complete data set..."
+
+* In the exercise file, scroll up to the section **Existing Data Being Reused** where the table **A Table of the first 4 rows of the DOAJ Seal data** is displayed. Immediately after the text sentence "A sample of the `doaj_seal.csv` data set is shown below", paste in the copied text. You should now have the following paragraph located above the static table.
+
+> A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document.
+
+* Test the link to Annex 10.1 to move between the static table and the dynamic one. Now you know how to build in links to different sections within an Rmarkdown document.
+
+
+## Adding Parameters to a Report
+
+Another dynamic feature of Rmarkdown reports is the ability to add parameters that allow the report to be customized  before knitting. In the words of @Xie_2018:
+
+> One of the many benefits of working with R Markdown is that you can reproduce analysis at the click of a button. This makes it very easy to update any work and alter any input parameters within the report. Parameterized reports extend this one step further, and allow users to specify one or more parameters to customize the analysis. This is useful if you want to create a report template that can be reused across multiple similar scenarios. Examples may include:
+
+>> * Showing results for a specific geographic location.
+>> * Running a report that covers a specific time period.
+>> * Running a single analysis multiple times for different assumptions.
+
+Let's parameterize our exercise file to demonstrate the power of this dynamic reporting feature!  We'll apply this feature to enable the author to select her/his Institution, a parameter that appears several times in the document. We wil need to add some new code to the YAML header as well as to several paragraphs where the Institution has been hard-coded.
+
+1. Open the file `insert_4b_params.txt` and copy all of the code. Close the file.
+
+2. In the YAML header at the bottom (before the three ending dashes), paste in the copied code. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
+
+3. Now replace all occurrences of a hard-coded Institution name with code that will be populated by the parameter selected at knit time. The first occurrence is in the YAML Header. To find the occurrences in the main body of the text, use the `Find` option under `RStudio`'s Edit menu.
+
+The code to insert is `r params$institution`.
+
+
+
 
 
 
