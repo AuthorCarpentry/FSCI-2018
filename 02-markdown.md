@@ -65,7 +65,7 @@ meaning. For example,
 
 2. Add emphasis to the text, where appropriate, using single or double asterisks or single or double underscores. Examples of text passages in want of emphasis are:  the phrase "Not Applicable"; the title of the Project; titles of publications.
 
-3. Superscripts and subscripts can be added by surrounding the text with the symbols \^ and \~ , respectively. Find a phrase in the exercise file in want of a superscript and mark it up accordingly. Add an _arrow sticky note_ to your laptop lid.
+3. Superscripts and subscripts can be added by surrounding the text with the symbols ^ and ~ , respectively. Find a phrase in the exercise file in want of a superscript and mark it up accordingly. Add an _arrow sticky note_ to your laptop lid.
 
 4. Quote two text blocks in the exercise file using the \> symbol at the beginning of the line (maybe you remember this from old e-mail programs?)
 
