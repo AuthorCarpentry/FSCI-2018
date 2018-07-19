@@ -75,7 +75,7 @@ IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 You also need to download some files for this workshop:
 
-1. Download [this zip file]({{ page.root }}/data/FSCI-2018-files.zip) and move
+1. Download [this zip file](/data/FSCI-2018-files.zip) and move
 the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
 with a new folder called `FSCI-2018-files`.
