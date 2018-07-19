@@ -21,16 +21,13 @@ It's time to start building your own Reproducible Report! The course instructors
 
 #### Step 1. 
 
-In RStudio, navigate through the `Files` directory to the `FSCI-2018/data` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
+In RStudio, navigate through the `Files` pane to the `FSCI-2018-files` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
 
 #### Step 2. Note that the `.Rmd` exercise file has three main components:
 
-*  `YAML Header` 
-YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
-
-*   The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
-
-*    Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
+*`YAML Header`  YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
+*The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
+*Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
 
 
 #### Step 3. Edit the exercise file per the following instructions 
