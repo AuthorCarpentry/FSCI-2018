@@ -63,7 +63,7 @@ Install R by downloading and running this
 please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
-Linux
+### Linux
 You can download the binary files for your distribution from
 [CRAN](https://cran.r-project.org/index.html). Or you can use your package 
 manager (e.g. for Debian/Ubuntu run sudo apt-get install r-base and for 
@@ -71,11 +71,14 @@ Fedora run sudo dnf install R). Also, please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 
+## Workshop Files
+
 You also need to download some files for this workshop:
 
-1. Make a new folder in your Desktop called `FSCI-2018-openauthoring`.
-2. Download [The ZIP FILE OF FUN COMPONENTS]({{ page.root }}/data/) and mode the file to this folder.
-3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
+1. Download [this zip file]({{ page.root }}/data/FSCI-2018-files.zip) and move
+the file to your desktop.
+2. If it's not unzipped yet, double-click on it to unzip it. You should end up
+with a new folder called `FSCI-2018-files`.
 
 Install dependencies
 
