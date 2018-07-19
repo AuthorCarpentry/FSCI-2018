@@ -2,9 +2,10 @@
 title: "Do Reputable Open Access Journals Require Open Data Sharing?"
 author: "Gail Clement and Tom Morrell"
 date: "August 2, 2018"
-output: html_document
-  toc: true
-  toc_float: true
+output: 
+html_document:
+        toc: true
+        toc_float: true
 bibliography: oajournals.bib
 ---
 

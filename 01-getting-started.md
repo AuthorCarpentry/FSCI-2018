@@ -80,21 +80,41 @@ the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
 with a new folder called `FSCI-2018-files`.
 
-Install dependencies
-
-tidyverse
-rmarkdown
-DT
-rorcid
-httpur
-
 ## Intro to RStudio and knitting documents
 
-RStudio has four panels.  
+Now open Rstudio (Applications/Rstudio).  Rstudio is the development
+environment where we'll be working on our document.  The main panel you'll see
+on the left is the Console, where you can run R code.  On the right is two
+panels - the upper contains your environment (what R can access), and the lower
+contains the files on your computer.  
 
-Open 'Base_2013_day1.Rmd' in Rstudio.  Change the name in the document to your name.  
+The first thing to do is install some packages.  RStudio makes it easy to
+install new packages to do things you want.  You can find packages by going to
+the 'Packages' tab in the lower right panel.  You can install new packages by
+clicking the Install button and typing in the package name.  For this workshop
+we'll need the following packages:
 
-Then hit the Knit button to generate a formatted version of the document. 
+- tidyverse
+- DT
+- rorcid
+- httpuv
+
+Now let's actually work with a document.  Click in the Files tab in the lower
+right panel.  The file view in RStudio is just like
+navigating in finder or windows explorer.  Let's find the FSCI-2018-files
+folder we downloaded above.  Go to Desktop and FSCI-2018-files.  You'll see
+lots of files we'll use during the workshop.  Double click on
+'example_document.Rmd'.  
+
+You'll see the document open in a new panel on the left hand side of the
+screen.  This is an editor window, and you can change things in the document
+here.  For now, just change the name in the document to your name.  
+
+Knitting is a process in Rstudio that takes a text document and turns it into
+an output (like html, docx, or slides).  Now click the knit button in the upper
+left hand corner of the editor.    The first
+time you do this you'll get a message that you need to install some packages.
+You'll want to click Yes and wait for the packages to install.
 
 You can output this single file in multiple formats.  By default we've been
 generating .html files, but we can also output to a word document.

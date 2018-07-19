@@ -112,21 +112,43 @@ the file to your desktop.</li>
 with a new folder called <code>FSCI-2018-files</code>.</li>
 </ol>
 
-<p>Install dependencies</p>
-
-<p>tidyverse
-rmarkdown
-DT
-rorcid
-httpur</p>
-
 <h2>Intro to RStudio and knitting documents</h2>
 
-<p>RStudio has four panels.</p>
+<p>Now open Rstudio (Applications/Rstudio).  Rstudio is the development
+environment where we&rsquo;ll be working on our document.  The main panel you&rsquo;ll see
+on the left is the Console, where you can run R code.  On the right is two
+panels - the upper contains your environment (what R can access), and the lower
+contains the files on your computer.</p>
 
-<p>Open &lsquo;Base_2013_day1.Rmd&rsquo; in Rstudio.  Change the name in the document to your name.</p>
+<p>The first thing to do is install some packages.  RStudio makes it easy to
+install new packages to do things you want.  You can find packages by going to
+the &lsquo;Packages&rsquo; tab in the lower right panel.  You can install new packages by
+clicking the Install button and typing in the package name.  For this workshop
+we&rsquo;ll need the following packages:</p>
 
-<p>Then hit the Knit button to generate a formatted version of the document.</p>
+<ul>
+<li>tidyverse</li>
+<li>DT</li>
+<li>rorcid</li>
+<li>httpuv</li>
+</ul>
+
+<p>Now let&rsquo;s actually work with a document.  Click in the Files tab in the lower
+right panel.  The file view in RStudio is just like
+navigating in finder or windows explorer.  Let&rsquo;s find the FSCI-2018-files
+folder we downloaded above.  Go to Desktop and FSCI-2018-files.  You&rsquo;ll see
+lots of files we&rsquo;ll use during the workshop.  Double click on
+&lsquo;example_document.Rmd&rsquo;.</p>
+
+<p>You&rsquo;ll see the document open in a new panel on the left hand side of the
+screen.  This is an editor window, and you can change things in the document
+here.  For now, just change the name in the document to your name.</p>
+
+<p>Knitting is a process in Rstudio that takes a text document and turns it into
+an output (like html, docx, or slides).  Now click the knit button in the upper
+left hand corner of the editor.    The first
+time you do this you&rsquo;ll get a message that you need to install some packages.
+You&rsquo;ll want to click Yes and wait for the packages to install.</p>
 
 <p>You can output this single file in multiple formats.  By default we&rsquo;ve been
 generating .html files, but we can also output to a word document.</p>
