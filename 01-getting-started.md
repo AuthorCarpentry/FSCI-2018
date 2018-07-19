@@ -114,13 +114,24 @@ Knitting is a process in Rstudio that takes a text document and turns it into
 an output (like html, docx, or slides).  Now click the knit button in the upper
 left hand corner of the editor.    The first
 time you do this you'll get a message that you need to install some packages.
-You'll want to click Yes and wait for the packages to install.
+You'll want to click Yes and wait for the packages to install.  Once the
+installation you'll see an interactive demonstration document!
 
 You can output this single file in multiple formats.  By default we've been
-generating .html files, but we can also output to a word document.
+generating .html files, but we can also output to a word document.  If you
+click on the downward arrow next to the knit button we see some default
+formats.  Click on Word, and a word document will appear.  
 
-To output to slides, change the output format in the header to
-slidy_presentation.  You can then open this up in your web browser and tab
-through the presentation.
+While pdf is an option, this requires a TeX distribution which is annoying to
+install and is not part of this workshop.
+
+You can also select other output forms that aren't listed in the knitr
+dropdown.  Tae a look at the document.  You'll see in the top a section called
+`output` with sections under it like `html_document`.  If we change the top
+output knit will produce a different result.  Try replacing `word_document`
+with `slidy_presentation`.  This is a html presentation that you can use in 
+any web browser.
+
+Tomorrow we'll start working with actual document text!
 
 Next: [Basic Markdown](02-markdown.html)
