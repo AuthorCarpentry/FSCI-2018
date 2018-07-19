@@ -15,7 +15,7 @@
 
 ## Introductions
 
-Instructors and learners
+Let's get introductions from instructors and learners.
 
 Paper hasn't changed much in 400 years.
 
@@ -35,7 +35,7 @@ same thing as you, cross it out.  The group with the last unique item wins!
 
 ## What can authors do?
 
-How can the actual publication.
+How can the actual publication do more?
 
 Now we'll show you the final result (on our machine).  
 
@@ -75,7 +75,7 @@ IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 You also need to download some files for this workshop:
 
-1. Download [this zip file](/data/FSCI-2018-files.zip) and move
+1. Download [this zip file](/FSCO-2018/data/FSCI-2018-files.zip) and move
 the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
 with a new folder called `FSCI-2018-files`.
