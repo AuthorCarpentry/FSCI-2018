@@ -71,7 +71,7 @@ meaning. For example,
 
 > This is a Quote
 
-5. Bulleted lists: To make unnumbered bullet lists , just start each line with a single asterisk \* or \ - hyphen and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
+5. Bulleted lists: To make unnumbered bullet lists , just start each line with a single asterisk \* or - hyphen and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
 
     To make a nested list, indent four spaces below the first level bullet and add another bullet using the \+ symbol
 
@@ -92,7 +92,7 @@ address in round parentheses \(\). Don't forget to include http:// or https://
 at the beginning of the link address. (TIP: Make sure there is no space between
 the text in brackets and the address in parantheses!)
 
-9. Add four footnotes to the text in the exercise (replace the placeholder'FN-') by inserting the caret symbol \^ outside of square brackets \[\], and inserting the footnote content inside those brackets.
+9. Add four footnotes to the text in the exercise (replace the placeholder'FN-') by inserting the caret symbol ^ outside of square brackets \[\], and inserting the footnote content inside those brackets.
 
 10. Pandoc supports crude tables created with the pipe \| and \- symbols to designate cell borders, and the \+ symbol to control text alignment in a cell. The exercise file provides the makings of a pipe table in the Expected Outputs section. the final row of data needs formatting -- once you complete the table, save the file and knit it to both HTML and Word. If successful, save the file again under the name 'Base_2013_day3_in.Rmd'. 
 
