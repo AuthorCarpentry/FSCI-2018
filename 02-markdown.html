@@ -49,9 +49,11 @@
 
 <h4>Step 2. Note that the <code>.Rmd</code> exercise file has three main components:</h4>
 
-<p>*<code>YAML Header</code>  YAML (&ldquo;Not Another Markdown Language&rdquo;) contains document metadata that <code>knitr</code> and <code>pandoc</code> need to properly render the document and produce an output file. The header is set off with three dashes <code>---</code> above and below. Make sure there is  a blank line between the <code>YAML</code> header and the rest of the document.
-*The main body of the text contains the content you compose and markup with <code>Rmarkdown</code> syntax to clarify its meaning and polish its appearance.
-*Code chunks contain <code>R</code> code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.</p>
+<ul>
+<li><code>YAML Header</code>  YAML (&ldquo;Not Another Markdown Language&rdquo;) contains document metadata that <code>knitr</code> and <code>pandoc</code> need to properly render the document and produce an output file. The header is set off with three dashes <code>---</code> above and below. Make sure there is  a blank line between the <code>YAML</code> header and the rest of the document.</li>
+<li>The main body of the text contains the content you compose and markup with <code>Rmarkdown</code> syntax to clarify its meaning and polish its appearance.</li>
+<li>Code chunks contain <code>R</code> code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.</li>
+</ul>
 
 <h4>Step 3. Edit the exercise file per the following instructions</h4>
 
@@ -110,13 +112,12 @@ meaning. For example,</p>
 
 <li><p>Create multiple links to content elsewhere by placing each link text in square brackets [] followed by the link address in round parentheses (). Don&rsquo;t forget to include http:// or https:// at the beginning of the link address.</p></li>
 
-<li><p>Create one inline image by adding an exclamation mark ! in the text, then placing the image name  in square brackets [] followed by the image file address in round parentheses (). Don&rsquo;t forget to include http:// or https:// at the beginning of the link address.</p></li>
-</ol>
+<li><p>Create one inline image by adding an exclamation mark ! in the text, then
+placing the image name  in square brackets [] followed by the image file
+address in round parentheses (). Don&rsquo;t forget to include http:// or https://
+at the beginning of the link address. (TIP: Make sure there is no space between
+the text in brackets and the address in parantheses!)</p></li>
 
-<pre><code>TIP: Make sure there is no space between the text in brackets and the address in parantheses!
-</code></pre>
-
-<ol>
 <li><p>Add four footnotes to the text in the exercise (replace the placeholder&rsquo;FN-&lsquo;) by inserting the caret symbol \^ outside of square brackets [], and inserting the footnote content inside those brackets.</p></li>
 
 <li><p>Pandoc supports crude tables created with the pipe | and - symbols to designate cell borders, and the + symbol to control text alignment in a cell. The exercise file provides the makings of a pipe table in the Expected Outputs section. the final row of data needs formatting &ndash; once you complete the table, save the file and knit it to both HTML and Word. If successful, save the file again under the name &lsquo;Base_2013_day3_in.Rmd&rsquo;.</p></li>

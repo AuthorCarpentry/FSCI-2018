@@ -25,9 +25,9 @@ In RStudio, navigate through the `Files` pane to the `FSCI-2018-files` subfolder
 
 #### Step 2. Note that the `.Rmd` exercise file has three main components:
 
-*`YAML Header`  YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
-*The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
-*Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
+* `YAML Header`  YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
+* The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
+* Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
 
 
 #### Step 3. Edit the exercise file per the following instructions 
@@ -86,11 +86,11 @@ meaning. For example,
 
 7. Create multiple links to content elsewhere by placing each link text in square brackets \[\] followed by the link address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
 
-8. Create one inline image by adding an exclamation mark \! in the text, then placing the image name  in square brackets \[\] followed by the image file address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
-
-```
-TIP: Make sure there is no space between the text in brackets and the address in parantheses!
-```
+8. Create one inline image by adding an exclamation mark \! in the text, then
+placing the image name  in square brackets \[\] followed by the image file
+address in round parentheses \(\). Don't forget to include http:// or https://
+at the beginning of the link address. (TIP: Make sure there is no space between
+the text in brackets and the address in parantheses!)
 
 9. Add four footnotes to the text in the exercise (replace the placeholder'FN-') by inserting the caret symbol \^ outside of square brackets \[\], and inserting the footnote content inside those brackets.
 
