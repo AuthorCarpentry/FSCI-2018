@@ -154,7 +154,7 @@ $(document).ready(function () {
 <li>Copy the code into the <strong>Data being collected</strong> section of the exercise file, making it the first sentence.</li>
 <li>Close the file <code>insert_4a_jnls.txt</code></li>
 </ol>
-<p>Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now?</p>
+<p>Save the changes to the exercise file and knit to HTML and Word. Can you find the dynamically-generated inline text now? When was your document orginally created and how many journals have the DOAJ Seal?</p>
 </div>
 <div id="auto-generate-bibliography-files" class="section level2">
 <h2>Auto-generate bibliography files</h2>
@@ -191,8 +191,8 @@ $(document).ready(function () {
 <p>To accomplish this enhancement, we need to copy a code chunk that formats the underlying dataset using the <code>Datatable (DT)</code> package. <span class="citation">[@R-DT]</span>. This package is one of the <a href="https://www.htmlwidgets.org/">HTML Widgets</a> that enable JavaScript libraries to create dynamic content in <code>Rmarkdown</code> documents. <code>DT</code> tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illusthate the power of interactive features !</p>
 <ol style="list-style-type: decimal">
 <li><p>Open the <code>R</code> script <code>insert_4b_DTtable.R</code> and copy all of the code with your mouse. Close the file.</p></li>
-<li><p>In the exercise file, scroll down to the <strong>Annexes</strong> heading and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report.</p></li>
-<li><p>Now let’s tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (higher up in the exercise file).</p></li>
+<li><p>In the exercise file, scroll down to the Level One heading <strong>Annexes</strong> and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report.</p></li>
+<li><p>Now let’s tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (the static table is higher up in the exercise file).</p></li>
 </ol>
 <ul>
 <li><p>Open the file <code>insert_4b_table.txt</code> and copy the first line of text (marked with a ## header). Keep this file open because we will return to it to copy the second paragraph of text shortly…</p></li>
@@ -204,12 +204,12 @@ $(document).ready(function () {
 <p>A sample of the <code>doaj_seal.csv</code> data set is shown below. The complete data set is available in searchable and broweseable format as <a href="#annex-table">Annex 10.1</a> at the end of this document.</p>
 </blockquote>
 <ul>
-<li>Test the link to Annex 10.1 to move between the static table and the dynamic one. Now you know how to build in links to different sections within an Rmarkdown document.</li>
+<li>Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an <code>Rmarkdown</code> document!</li>
 </ul>
 </div>
 <div id="adding-parameters-to-a-report" class="section level2">
 <h2>Adding Parameters to a Report</h2>
-<p>Another dynamic feature of Rmarkdown reports is the ability to add parameters that allow the report to be customized before knitting. In the words of <span class="citation">@Xie_2018</span>:</p>
+<p>Another dynamic feature of Rmarkdown reports is the ability to add parameters that allow the report to be customized before knitting. In the words of Yihui Xie, J. J. Allaire, Garrett Grolemund, writing in <em>R Markdown: The Definitive Guide</em>[1]</p>
 <blockquote>
 <p>One of the many benefits of working with R Markdown is that you can reproduce analysis at the click of a button. This makes it very easy to update any work and alter any input parameters within the report. Parameterized reports extend this one step further, and allow users to specify one or more parameters to customize the analysis. This is useful if you want to create a report template that can be reused across multiple similar scenarios. Examples may include:</p>
 </blockquote>
@@ -222,28 +222,51 @@ $(document).ready(function () {
 </ul>
 </blockquote>
 </blockquote>
-<p>Let’s parameterize our exercise file to demonstrate the power of this dynamic reporting feature! We’ll apply this feature to enable the author to select her/his Institution, a parameter that appears several times in the document. We wil need to add some new code to the YAML header as well as to several paragraphs where the Institution has been hard-coded.</p>
+<p>Let’s parameterize our exercise file to demonstrate the power of this dynamic reporting feature! We’ll apply this feature to enable the author to select her/his Institution before knitting. ‘a parameter’Institution’ appears six times in the exercise file. We will need to add some new code to the YAML header as well as to several paragraphs where the Institution has been manually entered.</p>
 <ol style="list-style-type: decimal">
 <li><p>Open the file <code>insert_4b_params.txt</code> and copy all of the code. Close the file.</p></li>
-<li><p>In the YAML header at the bottom (before the three ending dashes), paste in the copied code. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.</p></li>
-<li><p>Now replace all occurrences of a hard-coded Institution name with code that will be populated by the parameter selected at knit time. The first occurrence is in the YAML Header. To find the occurrences in the main body of the text, use the <code>Find</code> option under <code>RStudio</code>’s Edit menu.</p></li>
+<li><p>In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code <code>r params$institution</code>. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.</p></li>
+<li><p>In the the body text of the exercise file, find five occurrences of an Institution name. To find the occurrences in the main body of the text, use the <code>Find</code> option under <code>RStudio</code>’s Edit menu. Replace each occurrence of an Institution name with the code <code>r params$institution</code>. When you <code>knit with parameters</code>, the inline <code>R</code> code will automatically write in the name of your selected Institution.</p></li>
+<li><p>Knit to HTML and find six occurences of your auto-populated Institution name.</p></li>
 </ol>
-<p>The code to insert is <code>r params$institution</code>.</p>
 </div>
-<div id="pull-from-an-orcid-profile" class="section level2">
-<h2>Pull from an ORCID profile</h2>
-<p>In order to dynamically pull from an ORCID profile, we have to get an authentication token from ORCID. In the document find the section called ‘Principal Investigators Biosketch’. We’ll be doing a three step process to connect our document with our ORCID account.</p>
-<p>Open the file <code>insert_4b_orcid.R</code>. Copy the first code chunk to the ‘Principal Investigators Biosketch’ section of your document.</p>
-<p>Click the green arrow to run the code chunk. This will open up a web browser to the ORCID web site, where you’ll log in as normal. In your R environment you’ll see a variable called ‘token’. This is what provides access to ORCID.</p>
-<p>In the R console type <code>token</code>. This will print the token value to the console. Next copy and paste the following code chunk:</p>
+<div id="autopopulate-your-biosketch-from-your-orcid-profile-on-the-web" class="section level2">
+<h2>Autopopulate your Biosketch from your ORCID profile on the web</h2>
+<p>This final dynamic feature demonstrates the power of keeping your updated professional information in your ORCID profile, and copying information from it as you need it in your reproducible report.</p>
+<ol style="list-style-type: decimal">
+<li>We have to get an authentication token from ORCID in order to read your bio from your ORCID profile. This is a three-step process, allowing RStudio and <code>R</code> to communicate with the ORCID system.</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li><p>In the exercise file, navigate to the section <strong>Principal Investigator’s Biosketch</strong>. Open the file <code>insert_4b_orcid.R</code>. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header <strong>Principal Investigators Biosketch</strong>.</p></li>
+<li><p>In this new code chunk in your exercise file, click the green arrow to the upper right corner of to run the code. This will open up a web browser to the ORCID web site, where you’ll log in to your account as usual. In your RStudio Environment window, you will see a variable called <code>token</code> added. This is the authorization code issued by ORCID that allows R and RStudio to read information from your ORCID account.</p></li>
+</ol>
+<p>In the R console type <code>token</code>. This will print to the console the token value you saw added to your Environment.</p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>This step creates an .R environment file in your computer’s home directory where you will store the ORCID <code>token</code>. By doing so, the authorization is able to be reactivated every time you communicate with ORCID to refresh or add data from your profile.</li>
+</ol>
+<p>Copy and paste the following code chunk into the console (NOT into your exercise file!):</p>
 <pre><code>if(!file.exists(&quot;~/.Renviron&quot;)) # only create if not already there
   file.create(&quot;~/.Renviron&quot;)    # (don't overwrite it)
 file.edit(&quot;~/.Renviron&quot;)</code></pre>
-<p>This will open up a text file in Rstudio. In this file you’ll want to type</p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>A new text file now opens in Rstudio. In this file you’ll want to type</li>
+</ol>
 <pre><code>ORCID_TOKEN=&quot;1c7...&quot;</code></pre>
-<p>where <code>1c7...</code> is replaced by the long string that we printed to the R console earlier. You’ll want to copy everything after <code>BEARER</code>. Save this file, which will be read every time you use R. This file will show up in your home directory, which is different from your current directory.</p>
-<p>Now go back to the document. Edit the text to say ‘This is auto-populated..’ and then add the text ‘<code>r bio</code>’ which will place your bio in the document. Then knit and you’ll see your biography from ORCID in the document.</p>
-<p>Now go to your ORCID account and make a change to your biography. Now all you need to update the biosketch in your document is to click the knit button.</p>
+<p>where <code>1c7...</code> is replaced by the token that we printed to the R console earlier. You will need to copy everything after <code>BEARER</code> that was just printed to the console. Paste it in after the <code>=</code> sign.</p>
+<ol start="6" style="list-style-type: lower-alpha">
+<li><p>Save this file, which will be read every time you use <code>R</code>. This file will show up in your computer’s home directory, which is outside of your current project directory.</p></li>
+<li><p>Edit the exercise file text to say ‘This is auto-populated..’ and then add the text ‘<code>r bio</code>’ which will place your bio in the document.</p></li>
+<li><p>Save the changes, knit to HTML, and you’ll see your biography from your ORCID file now appears in the reproducible report.</p></li>
+<li><p>To test that the ORCID bio will be auto-updated in your reproducible report, go to your ORCID account and make a change to your biography.</p></li>
+</ol>
+<p>When you knit the document to HTML, the <strong>Principal Investigators Biosketch</strong> auto-updates!</p>
+<table>
+<tbody>
+<tr class="odd">
+<td>[1] Xie et al was published online in July 2018 at <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a></td>
+</tr>
+</tbody>
+</table>
 <p>Previous: <a href="00-getting-started.html">Getting Started with Markdown</a> Next: <a href="02-gh-pages.html">Github Pages</a></p>
 </div>
 </div>
