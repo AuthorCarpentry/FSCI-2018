@@ -21,16 +21,13 @@ It's time to start building your own Reproducible Report! The course instructors
 
 #### Step 1. 
 
-In RStudio, navigate through the `Files` directory to the `FSCI-2018/data` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
+In RStudio, navigate through the `Files` pane to the `FSCI-2018-files` subfolder and open the exercise file `Base_2013_day2_in.Rmd`. Immediately save it as `Base_2013_day2_out.Rmd` and close the 'in' file. We will  continue to work on the 'out' file during this lesson.  By the end of the course, that 'out' file will be ready to publish online, showcasing your open authoring skills!
 
 #### Step 2. Note that the `.Rmd` exercise file has three main components:
 
-*  `YAML Header` 
-YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
-
-*   The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
-
-*    Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
+* `YAML Header`  YAML ("Not Another Markdown Language") contains document metadata that `knitr` and `pandoc` need to properly render the document and produce an output file. The header is set off with three dashes `---` above and below. Make sure there is  a blank line between the `YAML` header and the rest of the document. 
+* The main body of the text contains the content you compose and markup with `Rmarkdown` syntax to clarify its meaning and polish its appearance.
+* Code chunks contain `R` code that is executed when the document is knit to HTML, Word, or another output format. We will ignore the code chunks until a bit later in the Course, when we take on dynamic reporting elements.
 
 
 #### Step 3. Edit the exercise file per the following instructions 
@@ -68,13 +65,13 @@ meaning. For example,
 
 2. Add emphasis to the text, where appropriate, using single or double asterisks or single or double underscores. Examples of text passages in want of emphasis are:  the phrase "Not Applicable"; the title of the Project; titles of publications.
 
-3. Superscripts and subscripts can be added by surrounding the text with the symbols \^ and \~ , respectively. Find a phrase in the exercise file in want of a superscript and mark it up accordingly. Add an _arrow sticky note_ to your laptop lid.
+3. Superscripts and subscripts can be added by surrounding the text with the symbols ^ and ~ , respectively. Find a phrase in the exercise file in want of a superscript and mark it up accordingly. Add an _arrow sticky note_ to your laptop lid.
 
 4. Quote two text blocks in the exercise file using the \> symbol at the beginning of the line (maybe you remember this from old e-mail programs?)
 
 > This is a Quote
 
-5. Bulleted lists: To make unnumbered bullet lists , just start each line with a single asterisk \* or \ - hyphen and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
+5. Bulleted lists: To make unnumbered bullet lists , just start each line with a single asterisk \* or - hyphen and a space for the bullet item.  Numbered lists work the same way using 1. 2. 3. or a. b. c.  
 
     To make a nested list, indent four spaces below the first level bullet and add another bullet using the \+ symbol
 
@@ -89,13 +86,13 @@ meaning. For example,
 
 7. Create multiple links to content elsewhere by placing each link text in square brackets \[\] followed by the link address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
 
-8. Create one inline image by adding an exclamation mark \! in the text, then placing the image name  in square brackets \[\] followed by the image file address in round parentheses \(\). Don't forget to include http:// or https:// at the beginning of the link address. 
+8. Create one inline image by adding an exclamation mark \! in the text, then
+placing the image name  in square brackets \[\] followed by the image file
+address in round parentheses \(\). Don't forget to include http:// or https://
+at the beginning of the link address. (TIP: Make sure there is no space between
+the text in brackets and the address in parantheses!)
 
-```
-TIP: Make sure there is no space between the text in brackets and the address in parantheses!
-```
-
-9. Add four footnotes to the text in the exercise (replace the placeholder'FN-') by inserting the caret symbol \^ outside of square brackets \[\], and inserting the footnote content inside those brackets.
+9. Add four footnotes to the text in the exercise (replace the placeholder 'FN-') by inserting the caret symbol ^ outside of square brackets \[\], and inserting the footnote content inside those brackets.
 
 10. Pandoc supports crude tables created with the pipe \| and \- symbols to designate cell borders, and the \+ symbol to control text alignment in a cell. The exercise file provides the makings of a pipe table in the Expected Outputs section. the final row of data needs formatting -- once you complete the table, save the file and knit it to both HTML and Word. If successful, save the file again under the name 'Base_2013_day3_in.Rmd'. 
 
@@ -105,4 +102,4 @@ Congratulations on completing the first draft of your Reproducible Report!
 ```
 
 
-Previous: [Getting Started with Markdown](00-getting-started.html) Next: [Github Pages](02-gh-pages.html)
+Previous: [Getting Started with Markdown](01-getting-started.html) Next: [Modifying Appearance](03-modifying-appearance.html)

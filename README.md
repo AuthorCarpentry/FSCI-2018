@@ -21,10 +21,6 @@ Author Carpentry at FSCI 2018: Reproducible Research Reporting and Dynamic Docum
 4. [Day 4: Dynamic Documents](04-dynamic.html)
 5. [Day 5: Publishing](04-publishing.html)
 
-## Data
-
-Please download the data files [here](https://github.com/AuthorCarpentry/FSCI-2018/tree/master/data)
-
 ## Requirements
 
 Author Carpentry's teaching is hands-on, so participants are encouraged to use

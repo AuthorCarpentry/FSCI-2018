@@ -15,7 +15,7 @@
 
 ## Introductions
 
-Instructors and learners
+Let's get introductions from instructors and learners.
 
 Paper hasn't changed much in 400 years.
 
@@ -35,7 +35,7 @@ same thing as you, cross it out.  The group with the last unique item wins!
 
 ## What can authors do?
 
-How can the actual publication.
+How can the actual publication do more?
 
 Now we'll show you the final result (on our machine).  
 
@@ -63,7 +63,7 @@ Install R by downloading and running this
 please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
-Linux
+### Linux
 You can download the binary files for your distribution from
 [CRAN](https://cran.r-project.org/index.html). Or you can use your package 
 manager (e.g. for Debian/Ubuntu run sudo apt-get install r-base and for 
@@ -71,33 +71,67 @@ Fedora run sudo dnf install R). Also, please install the [RStudio
 IDE](https://www.rstudio.com/products/rstudio/download/#download).
 
 
+## Workshop Files
+
 You also need to download some files for this workshop:
 
-1. Make a new folder in your Desktop called `FSCI-2018-openauthoring`.
-2. Download [The ZIP FILE OF FUN COMPONENTS]({{ page.root }}/data/) and mode the file to this folder.
-3. If it's not unzipped yet, double-click on it to unzip it. You should end up with a new folder called `data`.
-
-Install dependencies
-
-tidyverse
-rmarkdown
-DT
-rorcid
-httpur
+1. Download [this zip file](/FSCI-2018/data/FSCI-2018-files.zip) and move
+the file to your desktop.
+2. If it's not unzipped yet, double-click on it to unzip it. You should end up
+with a new folder called `FSCI-2018-files`.
 
 ## Intro to RStudio and knitting documents
 
-RStudio has four panels.  
+Now open Rstudio (Applications/Rstudio).  Rstudio is the development
+environment where we'll be working on our document.  The main panel you'll see
+on the left is the Console, where you can run R code.  On the right is two
+panels - the upper contains your environment (what R can access), and the lower
+contains the files on your computer.  
 
-Open 'Base_2013_day1.Rmd' in Rstudio.  Change the name in the document to your name.  
+The first thing to do is install some packages.  RStudio makes it easy to
+install new packages to do things you want.  You can find packages by going to
+the 'Packages' tab in the lower right panel.  You can install new packages by
+clicking the Install button and typing in the package name.  For this workshop
+we'll need the following packages:
 
-Then hit the Knit button to generate a formatted version of the document. 
+- tidyverse
+- DT
+- rorcid
+- httpuv
+
+Now let's actually work with a document.  Click in the Files tab in the lower
+right panel.  The file view in RStudio is just like
+navigating in finder or windows explorer.  Let's find the FSCI-2018-files
+folder we downloaded above.  Go to Desktop and FSCI-2018-files.  You'll see
+lots of files we'll use during the workshop.  Double click on
+'Base_2013_day1_in.Rmd'.  
+
+You'll see the document open in a new panel on the left hand side of the
+screen.  This is an editor window, and you can change things in the document
+here.  For now, just change the name in the document to your name.  
+
+Knitting is a process in Rstudio that takes a text document and turns it into
+an output (like html, docx, or slides).  Now click the knit button in the upper
+left hand corner of the editor.    The first
+time you do this you'll get a message that you need to install some packages.
+You'll want to click Yes and wait for the packages to install.  Once the
+installation you'll see an interactive demonstration document!
 
 You can output this single file in multiple formats.  By default we've been
-generating .html files, but we can also output to a word document.
+generating .html files, but we can also output to a word document.  If you
+click on the downward arrow next to the knit button we see some default
+formats.  Click on Word, and a word document will appear.  
 
-To output to slides, change the output format in the header to
-slidy_presentation.  You can then open this up in your web browser and tab
-through the presentation.
+While pdf is an option, this requires a TeX distribution which is annoying to
+install and is not part of this workshop.
+
+You can also select other output forms that aren't listed in the knitr
+dropdown.  Tae a look at the document.  You'll see in the top a section called
+`output` with sections under it like `html_document`.  If we change the top
+output knit will produce a different result.  Try replacing `word_document`
+with `slidy_presentation`.  This is a html presentation that you can use in 
+any web browser.
+
+Tomorrow we'll start working with actual document text!
 
 Next: [Basic Markdown](02-markdown.html)
