@@ -1,41 +1,52 @@
-#  Introduction to Reproducible Authorship and Publishing
+#  Introduction to Reproducible Reporting
 2 Hours
 
 -------------------------
 
 ## Learning Objectives
 
-* Meet instructors and other learners
-* Describe ways of creating a research report
-* Explore a reproducible document
-* Install software needed for this workshop
-* Test generating a content in multiple formats in Rstudio
+* Meet instructors and other course participants
+* Describe common tools for producing and publishing a research report
+* Discuss elements of a reproducible research report
+* Explore a real-life reproducible research report
+* Install software needed for this course
+* Render a provided reproducible report to multiple outputs using Rstudio, `Rmarkdown`, and the `knitr` package
 
 ----------------------------------------------------
 
-## Introductions
+### Introductions
 
-Let's get introductions from instructors and learners.
+Please share the following:
 
-Paper hasn't changed much in 400 years.
+* Name
+* Professional position
+* One pet peeve about current practices around research communication (authoring, reviewing, or publishing)
 
-Review requirements of the scholarly record.
+### Group Discussion
 
-    1. Notification
-    2. Dissemination
-    3. Certification
-    4. Preservation
+Automation or transformation: has the research paper changed much in the last 350 years (or why static PDFs are an underwhelming use of today's technology)
 
-## Exercise about publishing
+![Maxwell's discovery of the electromagnetic properties of light](img/RSjournal.jpeg)
 
-What are the issues with the current publication system?  Join small groups
-and come up with as many things as you can (77 characters or less).  We'll get 
-back together in 10 minutes and listoff items.  If a group comes up with the 
-same thing as you, cross it out.  The group with the last unique item wins!
+Original manuscript of James Clerk Maxwell's paper on 'A dynamical theory of the electromagnetic field' published in the oldest scientific journal, _Philosophical Transactions_, in 1685. According to the publisher, the Royal Society:
 
-## What can authors do?
+> The final sentence on this page records his crucial revelation regarding the nature of light: 'The agreement of the results seems to show that light and magnetism are affections of the same substance and that light is an electromagnetic disturbance propagated through the field according to electromagnetic laws.' (source: https://www.theguardian.com/higher-education-network/gallery/2015/feb/12/philosophical-transactions-of-the-royal-society-350-years-of-science-publishing-in-pictures)
 
-How can the actual publication do more?
+Photograph: Royal Society's collections
+
+
+### Transforming the scholarly record: what are the must haves of a research report?
+
+1. Registration of the author's claim
+2. Certification that the research was conducted properly
+3. Dissemination of the work to the right audiences
+4. Preservation to ensure a permanent public record of the work that can be found and cited
+
+Source: Rallison, S.P., 'What are Journals For?', _Ann R Coll Surg Engl._ 2015 Mar; 97(2): 89-91. DOI: 10.1308/003588414X14055925061397
+
+## How can authors fulfill these requirements while making their research reports more Findable, Accessible, Interoperable, and Re-Useable/Reproducible?
+
+
 
 Now we'll show you the final result (on our machine).  
 
@@ -80,7 +91,7 @@ the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
 with a new folder called `FSCI-2018-files`.
 
-## Intro to RStudio and knitting documents
+## Intro to RStudio and `knitting` documents
 
 Now open Rstudio (Applications/Rstudio).  Rstudio is the development
 environment where we'll be working on our document.  The main panel you'll see
@@ -94,24 +105,24 @@ the 'Packages' tab in the lower right panel.  You can install new packages by
 clicking the Install button and typing in the package name.  For this workshop
 we'll need the following packages:
 
-- tidyverse
-- DT
-- rorcid
-- httpuv
+- `tidyverse`
+- `DT`
+- `rorcid`
+- `httpuv`
 
 Now let's actually work with a document.  Click in the Files tab in the lower
 right panel.  The file view in RStudio is just like
-navigating in finder or windows explorer.  Let's find the FSCI-2018-files
-folder we downloaded above.  Go to Desktop and FSCI-2018-files.  You'll see
+navigating in finder or windows explorer.  Let's find the `FSCI-2018-files`
+folder we downloaded above.  Go to Desktop and `FSCI-2018-files`.  You'll see
 lots of files we'll use during the workshop.  Double click on
-'Base_2013_day1_in.Rmd'.  
+`Base_2013_day1_in.Rmd`.  
 
 You'll see the document open in a new panel on the left hand side of the
 screen.  This is an editor window, and you can change things in the document
 here.  For now, just change the name in the document to your name.  
 
-Knitting is a process in Rstudio that takes a text document and turns it into
-an output (like html, docx, or slides).  Now click the knit button in the upper
+`Knitting` is a process in Rstudio that takes a text document and turns it into
+an output (like html, docx, or html slides).  Now click the knit button in the upper
 left hand corner of the editor.    The first
 time you do this you'll get a message that you need to install some packages.
 You'll want to click Yes and wait for the packages to install.  Once the
@@ -122,16 +133,16 @@ generating .html files, but we can also output to a word document.  If you
 click on the downward arrow next to the knit button we see some default
 formats.  Click on Word, and a word document will appear.  
 
-While pdf is an option, this requires a TeX distribution which is annoying to
-install and is not part of this workshop.
+While pdf is an option, this requires a TeX distribution which is complex to
+install and beyond the scope of  this course.
 
-You can also select other output forms that aren't listed in the knitr
+You can also select other output forms that aren't listed in the `knitr`
 dropdown.  Tae a look at the document.  You'll see in the top a section called
 `output` with sections under it like `html_document`.  If we change the top
 output knit will produce a different result.  Try replacing `word_document`
 with `slidy_presentation`.  This is a html presentation that you can use in 
 any web browser.
 
-Tomorrow we'll start working with actual document text!
+Tomorrow we'll start working with an actual research report !
 
 Next: [Basic Markdown](02-markdown.html)
