@@ -1,5 +1,5 @@
 ---
-title: "Do Reputable Open Access Journals Require Open Data Sharing?"
+title: "Data Management Plan for the Study _Do Reputable Open Access Journals Require Open Data Sharing?_"
 author: "Gail Clement and Tom Morrell"
 date: "August 2, 2018"
 output: 
@@ -54,7 +54,7 @@ ggplot(data=doaj, aes(doaj$PubCountry, fill=doaj$PubCountry)) + stat_count() + l
 ```
 
 
-A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document.
+A sample of the `doaj_seal.csv` data set is shown below.  
 
 ```{r}
 knitr::kable(head(doaj_seal, 4), caption = 'A Table of the first 4 rows of the DOAJ Seal data.')
