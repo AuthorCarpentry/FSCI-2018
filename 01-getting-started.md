@@ -1,4 +1,4 @@
-#  Introduction to Reproducible Reporting
+#  Introduction to Reproducible and Dynamic Reporting
 2 Hours
 
 -------------------------
@@ -14,7 +14,7 @@
 
 ----------------------------------------------------
 
-### Introductions
+## Introductions
 
 Please share the following:
 
@@ -22,7 +22,7 @@ Please share the following:
 * Professional position
 * One pet peeve about current practices around research communication (authoring, reviewing, or publishing)
 
-### Group Discussion
+## Group Discussion
 
 Automation or transformation: has the research paper changed much in the last 350 years (or why static PDFs are an underwhelming use of today's technology)
 
@@ -35,7 +35,7 @@ Original manuscript of James Clerk Maxwell's paper on 'A dynamical theory of the
 Photograph: Royal Society's collections
 
 
-### Transforming the scholarly record: what are the must haves of a research report?
+### Transforming the scholarly record: what are the _must haves_ of a research report?
 
 1. Registration of the author's claim
 2. Certification that the research was conducted properly
@@ -91,7 +91,7 @@ the file to your desktop.
 2. If it's not unzipped yet, double-click on it to unzip it. You should end up
 with a new folder called `FSCI-2018-files`.
 
-## Intro to RStudio and `knitting` documents
+## Intro to RStudio and knitting documents
 
 Now open Rstudio (Applications/Rstudio).  Rstudio is the development
 environment where we'll be working on our document.  The main panel you'll see
@@ -121,7 +121,7 @@ You'll see the document open in a new panel on the left hand side of the
 screen.  This is an editor window, and you can change things in the document
 here.  For now, just change the name in the document to your name.  
 
-`Knitting` is a process in Rstudio that takes a text document and turns it into
+Knitting is a process in Rstudio that takes a text document and turns it into
 an output (like html, docx, or html slides).  Now click the knit button in the upper
 left hand corner of the editor.    The first
 time you do this you'll get a message that you need to install some packages.
@@ -137,7 +137,7 @@ While pdf is an option, this requires a TeX distribution which is complex to
 install and beyond the scope of  this course.
 
 You can also select other output forms that aren't listed in the `knitr`
-dropdown.  Tae a look at the document.  You'll see in the top a section called
+dropdown.  Take a look at the document.  You'll see in the top a section called
 `output` with sections under it like `html_document`.  If we change the top
 output knit will produce a different result.  Try replacing `word_document`
 with `slidy_presentation`.  This is a html presentation that you can use in 
