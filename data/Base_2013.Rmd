@@ -194,8 +194,15 @@ Investigators will examine the websites of each journal listed in the `doaj_seal
 ### Expected outputs of the project
 
 
-```{r outputs-main, child = "outputs-child.Rmd"}
-```
+
+|Output #|Digital Output|Type|Format,Duration,Size|Planned access|
+|:------:|:-------|:-----------|:----------|:-------------|
+|1|doaj_seal.csv|raw data set downloaded from DOAJ site| CSV file, plain text format, 2.7 MB   | Not retained since duplicative  |
+|2| doaj_seal_enhanced.csv | enhanced data set with new data | CSV file, plain text format, 2.7 MB   | GitHub repository; Zenodo repository  |
+|3| Data set documentation | json metadata file | plain text file, .1 MB | Datacite registry database; GitHub public repository; Zenodo repository |
+|4| Data Processing steps  | R scripts and comments | R Notebook file, 1 MB | GitHub public repository |
+|5| Data Visualizations  | R scripts and documentation; Plots | R Notebook file, .png image files 4 MB | GitHub public repository |
+|6| Journal article | Rendered report | RMarkdown, 9 MB| Publisher website,   community preprint server|
 
 
 ```{r plot_license, echo= FALSE, fig.width=10,fig.height=11}
@@ -291,7 +298,7 @@ _This is auto-populated from your ORCID profile using the @R-rorcid `rorcid` pac
 library ('rorcid')
 library('httpuv')
 
-token <- orcid_auth(scope = "/authenticate", reauth = FALSE, redirect_uri = getOption("rorcid.redirect_uri"))
+token <- orcid_auth(scope = "/authenticate", reauth = TRUE, redirect_uri = getOption("rorcid.redirect_uri"))
 
 res <- orcid_bio(orcid = "0000-0001-5494-4806")
 bio <- res$'0000-0001-5494-4806'$'content'
