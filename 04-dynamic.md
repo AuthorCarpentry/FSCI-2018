@@ -4,14 +4,14 @@
 
 ---------------------------------------------------
 
-In a reproducible report, elements in the `Rmarkdown` file affect not only how your documents look, but also how they render and behave when output to a final format. That is because the coded text and scripts within the `Rmarkdown` file are **computationally actionable**. A computer is operating on the document to combine and render its content, providing you more power than you would have working manually as a human author.
+In a reproducible report, elements in the Rmarkdown file affect not only how your documents look, but also how they render and behave when output to a final format. That is because the coded text and scripts within the Rmarkdown file are **computationally actionable**. A computer is operating on the document to combine and render its content, providing you more power than you would have working manually as a human author.
 
 In this lesson we'll add a set of dynamic features to the exercise file and knit it to evaluate the outputs in HTML and Word.   
 
 
 ## Learning Objectives
 
-* Integrate dynamic content from an `R` script so the output is continually updated 
+* Integrate dynamic content from an R script so the output is continually updated 
 * Distinguish between dynamic elements that will (and won't) work in multiple output formats (HTML, Word)
 * Add an HTML widget to allow user interaction in an output HTML document
 * Parameterize a document to permit efficient and powerful customized HTML reports
@@ -19,7 +19,7 @@ In this lesson we'll add a set of dynamic features to the exercise file and knit
 
 ----------------------------------------------------
 
-## Content generated from `R` scripts
+## Content generated from R scripts
 
 Up to now, you have manually entered three dates referenced in this document. Let's replace them with dynamically generated dates that will auto-update by the computer!
 
@@ -43,7 +43,7 @@ Have you wondered why the YAML in the exercise file contains two separate biblio
 
 The reason for the two files is that some of the references cited in our reproducible report represent `R` packages used to generate the report. `R` packages are continually updated in the [The Comprehensive R Archive Network, CRAN](https://cran.r-project.org/). If we manually maintained the bibliography file we'd be editing it continually to reflect the new version of any `R` package we use.
 
-Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the `R` packages referenced in the report. This more powerful and efficient form of literature programming provides certainty that the references are always up-to-date!
+Alternatively, we can use the `write_bib.R` function in `knitr` to dynamically generate a `packages.bib` file for all the R packages referenced in the report. This more powerful and efficient form of literate programming provides certainty that the references are always up-to-date!
 
 In this exercise, let's add the citation for the `DT` and the  `rorcid` packages that we'll be using later on in this lesson.  
 
@@ -55,7 +55,7 @@ In this exercise, let's add the citation for the `DT` and the  `rorcid` packages
 
 ## Building in User Interaction (Part 1)
 
-`Rmarkdown` offers multiple ways to build in user interactivity into your reproducible report. Enhancing documents in this way allows readers of your report to interact with, inspect, and evaluate the data and code you've published. 
+Rmarkdown offers multiple ways to add user interactivity into your reproducible report. Enhancing documents in this way allows readers of your report to interact with, inspect, and evaluate the data and code you've published. 
 
 Let's start by adding a `code folding` option in our HTML output. This small interactive feature allows readers to see or hide the code chunks embedded in your report.
 
@@ -75,15 +75,15 @@ What difference do you see in how `code folding` renders in the HTML and Word ou
 
 The data underlying this report is a table showing _DOAJ Seal_ journals as rows, and the characteristics of those data as the columns. Let's make all of that data fully accessible and reusable for the readers of this report. 
 
-To accomplish this enhancement, we need to copy a code chunk that formats the underlying data set using the `Datatable (DT)` package. [@R-DT].  This package is one of the [HTML Widgets](https://www.htmlwidgets.org/) that enable JavaScript libraries to create dynamic content in `Rmarkdown` documents. `DT` tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illustrate the power of interactive features !
+To accomplish this enhancement, we need to copy a code chunk that formats the underlying data set using the `Datatable (DT)` package. [@R-DT].  This package is one of the [HTML Widgets](https://www.htmlwidgets.org/) that enable JavaScript libraries to create dynamic content in Rmarkdown documents. `DT` tables and other HTML Widgets are not covered in this course. However we can insert a pre-built data table in our reproducible report to illustrate the power of interactive features !
 
-1. Open the `R` script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
+1. Open the R script `insert_4b_DTtable.R` and copy all of the code with your mouse. Close the file.
 
 2. In the exercise file, scroll down to the Level One heading **Annexes** and paste in the code chunk. Save the change and knit the document to HTML to see the dynamic data table generated in your report. 
 
 3. Now let's tidy up this section of the report by adding a heading above this data table and a link to the static version of the table (the static table is higher up in the exercise file).
 
-* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a ## header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
+* Open the file `insert_4b_table.txt` and copy the first line of text (marked with a Level 2 header). Keep this file open because we will return to it to copy the second paragraph of text shortly...
 
 * In the exercise file, paste the copied text under the heading **Annexes** and above the data-table code chunk.
 
@@ -93,7 +93,7 @@ To accomplish this enhancement, we need to copy a code chunk that formats the un
 
 > A sample of the `doaj_seal.csv` data set is shown below.  The complete data set is available in searchable and  broweseable format as [Annex 10.1](#annex-table) at the end of this document.
 
-* Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an `Rmarkdown` document!
+* Test the link to Annex 10.1 to be sure you can move between the static table and the dynamic one. Now you can build in links to different sections within an Rmarkdown document!
 
 
 ## Adding Parameters to a Report
@@ -112,7 +112,7 @@ Let's parameterize our exercise file to demonstrate the power of this dynamic re
 
 2. In the YAML header of the exercise file ( at the bottom, before the three ending dashes), paste in the copied code `r params$institution`. If you wish to change the names of any of the Institutions listed, feel free to do so. Just make sure there are at least four Institutions included in the list. Save the changes.
 
-3. In the the body text of the exercise file, find five occurrences of an Institution name. To find the occurrences in the main body of the text, use the `Find` option under `RStudio`'s Edit menu. Replace each occurrence of an Institution name with the code ``r params$institution``.  When you `knit with parameters`, the inline `R` code will automatically write in the name of your selected Institution.
+3. In the the body text of the exercise file, find five occurrences of an Institution name. To find the occurrences in the main body of the text, use the 'Find' option under RStudio's Edit menu. Replace each occurrence of an Institution name with the code ``r params$institution``.  When you `knit with parameters`, the inline R code will automatically write in the name of your selected Institution.
 
 4. Knit to HTML and find six occurrences of your auto-populated Institution name.
 
@@ -120,15 +120,15 @@ Let's parameterize our exercise file to demonstrate the power of this dynamic re
 
 This final dynamic feature demonstrates the power of keeping your updated professional information in your ORCID profile, and copying information from it as you need it in your reproducible report.
 
-To make this feature work its magic, We need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and `R` to communicate with the ORCID system. Let's proceed step by step.
+To make this feature work its magic, we need to get an authentication token from ORCID in order to read your bio from your ORCID profile.  This is a multi-step process, allowing RStudio and R to communicate with the ORCID system. Let's proceed step by step.
 
 1. In the exercise file, navigate to the section **Principal Investigator's Biosketch**.  Open the file `insert_4b_orcid.R`. Copy the first code chunk from this file and paste into your exercise file under the Level 2 header **Principal Investigators Biosketch**.
 
 2. In this new code chunk in your exercise file, click the green arrow to the upper right corner to run the code. This will open up a web browser to the ORCID web site, where you'll log in to your account as usual.  
 
-In your RStudio Environment window, you will see a variable called `token` added. This is the authorization code issued by ORCID that allows `R` and RStudio to read information from your ORCID account.
+In your RStudio Environment window, you will see a variable called `token` added. This is the authorization code issued by ORCID that allows R and RStudio to read information from your ORCID account.
 
-3. In the R console type `token`.  This prints to the console the token value you saw added to your Environment. We'll be copying and pasting that token string into a new file in Step x below.
+3. In the R console type `token`.  This prints to the console the token value you saw added to your Environment. We'll be copying and pasting that token string into a new file in Step 5 below.
 
 4. This step creates an .R environment file in your computer's home directory where you will store the ORCID `token`. By doing so, the authorization is able to be reactivated every time your RStudio session communicates with ORCID to refresh or add data from your profile.   
 
@@ -144,7 +144,7 @@ ORCID_TOKEN="1c7..."
 where `1c7...` is replaced by the token that we printed to the R console earlier.  You will need to copy everything after `BEARER` that was just printed to the console. Paste it in after the `=` sign.
 
 
-6. Save this file, which will be read every time you use `R`.  
+6. Save this file, which will be read every time you use R.  
 
 FYI, this `.Renevironment file` will show up in your computer's home directory which is outside of your RStudio project directory. The exact "where" depends on your computer's operating system and configuration.
 
@@ -157,9 +157,9 @@ FYI, this `.Renevironment file` will show up in your computer's home directory w
 
   b. Insert code to place the ORCID bio into the PI Biosketch section. Below the code chunk, add `r bio`' 
 
-8. Save the changes, knit to HTML, and you'll see the biography from your ORCID file now appearin the reproducible report.
+8. Save the changes, knit to HTML, and you'll see the biography from your ORCID file now appear in the reproducible report.
 
-9. To test that the biosketch will be auto-updated in your reproducible report when your ORCID bio is updated, go to your ORCID account and make a change to your biography. You might add a new accomplishment to the top of the bio, such as *Master of Reproducible Reporting* or *Bends RMarkdown to Her/His Will*.
+9. To test that the biosketch will be auto-updated in your  report when your ORCID bio is updated, go to your ORCID account and make a change to your biography. You might add a new accomplishment to the top of the bio, such as *Master of Reproducible Reporting* or *Bends RMarkdown to Her/His Will*.
 
 When you knit the document to HTML, the **Principal Investigators Biosketch** auto-updates!
 
