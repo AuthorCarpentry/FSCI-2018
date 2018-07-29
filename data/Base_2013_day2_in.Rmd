@@ -1,5 +1,5 @@
 ---
-title: "Data Management Plan"
+title: "Data Management Plan for the Study _Do Reputable Open Access Journals Require Open Data Sharing"
 author: "Principal Investigator - Firstname Lastname, Institution"
 date: "August 1, 2018"
 output: html_document
@@ -48,19 +48,19 @@ Do Reputable Open Access Journals Require Open Data Sharing?
 
 Project Description
 
-This study analyzes the submission requirements of the most reputable open access journals to determine the prevalence and characteristics of data sharing policies. This question is an important one for 21st century authors and readers because open data sharing is seen as a key component of open and more trusted scientific record.
+This study analyzes the submission requirements of the most reputable open access journals to determine the prevalence and characteristics of data sharing policies. This question is an important one for 21st century authors and readers because open data sharing is seen as a key component of open and more trusted scientific record. Another question to ponder: is it time for a H2O break?
 
 According to the Research Data Alliance (RDA) Data Policy Standardisation and Implementation group https://www.rd-alliance.org/groups/data-policy-standardisation-and-implementation:
 
 "the prevalence of research data policies from institutions and research funders is increasing, so publishers and editors are paying more attention to  standardisation and the wider adoption of data sharing policies."
 
-This study investigates whether the most reputable Open Access journals have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles. FN-
+This study investigates whether the most reputable Open Access journals have data sharing polices and the characteristics of those policies. These policies require authors, in some fashion, to openly disseminate the data and software underlying their published articles.
 
 Our investigation builds on the recent work of Castro et al (2017) who assessed the prevalence and characteristics of data sharing policies from randomly-selected, English-language, open access journals. Their findings reveal that only a small minority of these journals have data sharing policies. These findings -- which are consistent with those of other studies (see for example, Vasilevsky et al, 2017) -- may be skewed because of the authors' rules of inclusion and exclusion FN - in particular, the choice to include open access journals merely because of their use of the Open Journal Systems (OJS) hosting platform; and the choice to exclude non_English language journals.
 
 In this study, we will include only the most reputable open access journals in our assessment  of journal sharing policies, regardless of language. We will analyze all journals that have attained the Seal of Approval from the Directory of Open Access Journals, DOAJ (http://doaj.org) (shown below). We will apply the same coding framework devised by Castro et al (2017)  to the DOAJ Seal journals. We contend that a more rigorously screened population of open access journals, regardless of language, will yield a more accurate and reproducible set of findings than those published from the previous study.
 
-DOAJ Seal of Approval images doaj_seal_logo.png
+DOAJ Seal of Approval doaj_seal_logo.png
 
 DOAJ Seal journals are considered the most reputable because they: 
 
@@ -196,7 +196,7 @@ Additionally, the Research Data Storage Facility (RDSF) at Trieste Polytechnic I
 
 ****
 
-# Selection and Preservation
+Selection and Preservation
 
 The final complete data set doaj_seal_enhanced and all published outputs produced based on this data set will be issued Digital Object Identifiers and stored on GitHub and Zenodo.  All draft versions of project outputs will also be publicly available in Git Hub with unique hashes distinguishing each version that predates the final.
 
@@ -213,13 +213,15 @@ The Principal Investigator is responsible for implementing the Data Management P
 
 The Data Management Specialist assigned to the project as an in-kind contribution from the Trieste Polytechnic Institute Library will be responsible for creating the DataCite metadata documentation for all outputs and ensuring timely DOI registration of each final output. (S)he will also deposit all final outputs to the Zenodo repository and update metadata associated with the DOI as necessary.
 
+****
 
-
-## Principal Investigator's BioSketch
+Principal Investigator's BioSketch
 
 About me...
 
-# References
+****
+
+References
 
 Castro et al, 2017. blah blah blah
 
