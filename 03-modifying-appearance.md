@@ -146,6 +146,13 @@ delete the dummy references that were there.  You'll notice that
 reference list.  If we look in the BibTex file, we see that no authors and date
 are defined for this reference.  `Knitr` tries its best, but won't correct or complete referendes if the proper data is not available in the `.bib` file.
 
+Let's fix the problem by grabbing a correct .bib file.  One great source is the
+DOI registration agencies.  Put the DOI for `Vasilevsky_2017`,
+`10.7717/peerj.3208` into the [cross cite
+service](https://citation.crosscite.org/) and select bibtex as the citation
+style.  You can copy the bibtex into oajournals.bib and see how the citation is
+now correct.
+
 ## Embedded Sub-Documents and Math
 
 To date we've been writing everything in one Rmarkdown document.  We can
