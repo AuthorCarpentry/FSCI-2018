@@ -150,8 +150,8 @@ Let's fix the problem by grabbing a correct .bib file.  One great source is the
 DOI registration agencies.  Put the DOI for `Vasilevsky_2017`,
 `10.7717/peerj.3208` into the [cross cite
 service](https://citation.crosscite.org/) and select bibtex as the citation
-style.  You can copy the bibtex into oajournals.bib and see how the citation is
-now correct.
+style.  Copy the bibtex into oajournals.bib, change the long default citation
+key to `Vasilevsky_2017`, and see how the citation is now correct.
 
 ## Embedded Sub-Documents and Math
 
