@@ -60,6 +60,8 @@ doaj_seal <- read_csv('DOAJ_Seal.csv')
 
 # Administrative Data
 
+@R-tidyverse
+
 ## ID
 
 *Not Applicable*

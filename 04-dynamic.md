@@ -155,7 +155,8 @@ FYI, this `.Renevironment file` will show up in your computer's home directory w
 `_This is auto-populated from your ORCID profile using the @R-rorcid `rorcid` package._`
 
 
-  b. Insert code to place the ORCID bio into the PI Biosketch section. Below the code chunk, add `r bio`' 
+  b. Insert code to place the ORCID bio into the PI Biosketch section. Below
+the code chunk, add `\`r bio\` `
 
 8. Save the changes, knit to HTML, and you'll see the biography from your ORCID file now appear in the reproducible report.
 
